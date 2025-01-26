@@ -7,7 +7,7 @@ export const getRevenue = () => {
 };
 
 export const getInventory = () => {
-  return fetch("https://wine-store-app-backend.vercel.app/api/products")
+  return fetch("https://tobago-reads-app-server.vercel.app/api/products")
     .then((res) => res.json())
     .then((data) => {
       return data;
@@ -17,7 +17,7 @@ export const getInventory = () => {
     });
 };
 export const deleteProduct = () => {
-  fetch("https://wine-store-app-backend.vercel.app/api/deleteProduct", {
+  fetch("https://tobago-reads-app-server.vercel.app/api/deleteProduct", {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
@@ -30,7 +30,7 @@ export const deleteProduct = () => {
 };
 
 export const getCustomers = () => {
-  return fetch("https://wine-store-app-backend.vercel.app/api/users")
+  return fetch("https://tobago-reads-app-server.vercel.app/api/users")
     .then((res) => res.json())
     .then((users) => {
       return users;
