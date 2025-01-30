@@ -426,16 +426,17 @@ const Dashboard = () => {
               <h2>Donation Distribution</h2>
             </div>
             <div className="chart-wrapper">
-              <PieChart width={350} height={400}>
+              <PieChart width={353} height={400}>
                 <Pie
                   data={donationData}
                   cx="50%"
-                  cy="50%"
+                  cy="53%"
                   labelLine={true}
                   label={({ name, percent }) =>
                     `${name} (${(percent * 100).toFixed(0)}%)`
                   }
-                  outerRadius={130}
+                  outerRadius={120}
+                  width="100%"
                   fill="#8884d8"
                   dataKey="value"
                 >

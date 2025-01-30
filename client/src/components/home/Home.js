@@ -4,11 +4,16 @@ import Banner from "../articles/Banner";
 import CountUp from "../articles/CountUp";
 import ProjectPage from "../articles/ProjectPage";
 import ContactPage from "../articles/ContactForm";
+import Map from "../articles/Map";
+import CommitteePage from "../articles/Commitee";
+import Committee from "../articles/CommiteePage";
 
 const Home = () => {
   return (
     <div>
       <Banner />
+      {/* <Map /> */}
+      {/* <Committee /> */}
       <About />
       <CountUp />
       <ProjectPage />

@@ -46,7 +46,7 @@ const About = () => {
         </TextContent>
         <ImageWrapper>
           <HeroImage
-            src="https://res.cloudinary.com/dbcygr0pi/image/upload/v1737224874/img1_bs5nap.jpg"
+            src="https://res.cloudinary.com/dbcygr0pi/image/upload/v1738155731/img8_kt83iz.jpg"
             alt="Innovation and Technology"
           />
         </ImageWrapper>
@@ -113,6 +113,7 @@ const About = () => {
               <p>Volunteer</p>
             </TeamMember>
           </TeamSection>
+          <CTA to="/commitee">See more</CTA>
         </div>
       </Services>
     </HeroSection>

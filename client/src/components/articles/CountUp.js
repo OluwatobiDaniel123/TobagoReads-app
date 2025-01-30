@@ -75,7 +75,7 @@ const HighlightsGrid = styled.div`
 
 const HighlightCard = styled.div`
   position: relative;
-  background: url("https://res.cloudinary.com/dbcygr0pi/image/upload/v1737226925/img5_tdn3lk.jpg")
+  background: url("https://res.cloudinary.com/dbcygr0pi/image/upload/v1738154907/ec51d3c9-8810-4df2-bc2c-be938c32463c_c1d994.png")
     no-repeat center center;
   background-size: cover;
   border-radius: 15px;
@@ -134,7 +134,66 @@ const HighlightCard = styled.div`
 
 const HighlightCard1 = styled.div`
   position: relative;
-  background: url("https://res.cloudinary.com/dbcygr0pi/image/upload/v1737384180/vecteezy_ai-generated-diversity-ethnic-kids_36234784_xtv3mf.jpg")
+  background: url("https://res.cloudinary.com/dbcygr0pi/image/upload/v1737383551/img7_n2xwpy.jpg")
+    no-repeat center center;
+  background-size: cover;
+  border-radius: 15px;
+  overflow: hidden;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    transition: background 0.4s ease;
+    z-index: 0;
+  }
+
+  &:hover::before {
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  h3,
+  p {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+  }
+
+  h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  @media (max-width: 768px) {
+    padding: 20px;
+    h3 {
+      font-size: 1.8rem;
+    }
+    p {
+      font-size: 0.9rem;
+    }
+  }
+`;
+
+const HighlightCard4 = styled.div`
+  position: relative;
+  background: url("https://res.cloudinary.com/dbcygr0pi/image/upload/v1738154400/3ae72e37-ddb1-43c6-8549-b96cdb3d727c_qsjvcl.png")
     no-repeat center center;
   background-size: cover;
   border-radius: 15px;
@@ -269,9 +328,9 @@ const CompanyHighlights = () => {
             <p>Projects Completed</p>
           </HighlightContent>
         </HighlightCard>
-        <HighlightCard>
+        <HighlightCard4>
           <IconWrapper>
-            <FaGlobeAfrica style={{ color: "lightblue" }} />
+            <FaGlobeAfrica style={{ color: "blue" }} />
           </IconWrapper>
           <HighlightContent>
             <h3>
@@ -279,7 +338,7 @@ const CompanyHighlights = () => {
             </h3>
             <p>Countries Served</p>
           </HighlightContent>
-        </HighlightCard>
+        </HighlightCard4>
       </HighlightsGrid>
     </HighlightsSection>
   );

@@ -15,6 +15,8 @@ import ProjectPage from "./components/articles/ProjectPage";
 import ContactPage from "./components/articles/ContactForm";
 import Dashboard, { Campaigns, Donors } from "./components/Dashboard/Dashboard";
 import Chatbox from "./components/articles/Chatbox/Chatbot";
+import CommitteePage from "./components/articles/Commitee";
+import Committee from "./components/articles/CommiteePage";
 
 const Layout = () => {
   return (
@@ -36,6 +38,7 @@ const router = createBrowserRouter(
         <Route path="/Donate" element={<DonationForm />} />
         <Route path="/About" element={<About />} />
         <Route path="/Contact" element={<ContactPage />} />
+        <Route path="/commitee" element={<Committee />} />
       </Route>
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/donors" element={<Donors />} />

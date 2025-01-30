@@ -98,7 +98,6 @@ const Footer = () => {
           <FooterLink href="#">Our Programs</FooterLink>
           <FooterLink href="#">Host an Event </FooterLink>
         </FooterSection>
-
         <FooterSection>
           <FooterHeader>Quick Links</FooterHeader>
           <FooterLink href="/About">About</FooterLink>
@@ -106,6 +105,17 @@ const Footer = () => {
           <FooterLink href="/Contact">Contact</FooterLink>
           <FooterLink href="/Donate">Donate Now</FooterLink>
           <FooterLink href="#">Blog</FooterLink>
+          <FooterLink href="/commitee">The Committee</FooterLink>
+        </FooterSection>
+        <FooterSection>
+          <FooterHeader>Projects</FooterHeader>
+          <FooterLink href="#">Shoebox of Love</FooterLink>
+          <FooterLink href="#">Adopt A Scholar</FooterLink>
+          <FooterLink href="#">Scholarships</FooterLink>
+          <FooterLink href="#">Reading Marathon</FooterLink>
+          <FooterLink href="#">Feminine Hygiene Packs</FooterLink>
+          <FooterLink href="#">Literacy Day</FooterLink>
+          <FooterLink href="#">Book Bags and School Supplies</FooterLink>
         </FooterSection>
         <FooterSection>
           <FooterHeader>Legal</FooterHeader>
