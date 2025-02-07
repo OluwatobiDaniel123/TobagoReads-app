@@ -7,11 +7,6 @@ const Map = () => {
   // Locations with corresponding Google Maps embed URLs
   const locations = [
     {
-      id: "tobago",
-      name: "Tobago Reads Map",
-      url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8056204.547269618!2d-61.261684625067005!3d10.69180328704151!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c360856cc972c85%3A0xe7229e2993f2927e!2sTobago!5e0!3m2!1sen!2sng!4v1738830453821!5m2!1sen!2sng",
-    },
-    {
       id: "trinidad",
       name: "Trinidad & Tobago",
       url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8056204.547269618!2d-61.261684625067005!3d10.69180328704151!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c360856cc972c85%3A0xe7229e2993f2927e!2sTrinidad%20and%20Tobago!5e0!3m2!1sen!2sng!4v1738830453821!5m2!1sen!2sng",
@@ -56,7 +51,7 @@ const Map = () => {
   return (
     <div className="map-container">
       <div className="network-controls">
-        <h3>Select Location</h3>
+        <h3>Tobago Reads Map</h3>
         <div className="network-buttons">
           {locations.map((location) => (
             <button
