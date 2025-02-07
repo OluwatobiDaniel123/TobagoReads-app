@@ -6,7 +6,7 @@ class ActionProvider {
 
   handleHello = () => {
     const message = this.createChatbotMessage(
-      "Hello! How can I assist you today? You can choose from the following services:"
+      "Hello! Welcome to tobagoreads How can I assist you today? You can choose from the following services:"
     );
     this.setState((prev) => ({
       ...prev,

@@ -6,9 +6,11 @@ const DonateContainer = styled.div`
   align-items: center;
   text-align: center;
   padding: 60px 30px;
-  background: url("https://res.cloudinary.com/dbcygr0pi/image/upload/v1737382927/vecteezy_woman-holding-red-heart-love-health-insurance-donation_16652611_njmc2u.jpg")
-    no-repeat center center;
-  background-size: cover;
+  // background: url("https://res.cloudinary.com/dbcygr0pi/image/upload/v1737382927/vecteezy_woman-holding-red-heart-love-health-insurance-donation_16652611_njmc2u.jpg")
+  //   no-repeat center center;
+  // background-size: cover;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+s
   color: #fff;
 `;
 const FormContainer = styled.div`

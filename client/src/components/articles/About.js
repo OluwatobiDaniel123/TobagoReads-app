@@ -46,7 +46,7 @@ const About = () => {
         </TextContent>
         <ImageWrapper>
           <HeroImage
-            src="https://res.cloudinary.com/dbcygr0pi/image/upload/v1738155731/img8_kt83iz.jpg"
+            src="https://res.cloudinary.com/dbcygr0pi/image/upload/v1737224874/img1_bs5nap.jpg"
             alt="Innovation and Technology"
           />
         </ImageWrapper>
@@ -86,31 +86,31 @@ const About = () => {
         </ServiceList>
 
         <div>
-          <CardTitle>Meet Our Volunteer's</CardTitle>
+          <CardTitle>Meet Our Committee</CardTitle>
           <TeamSection>
             <TeamMember>
               <img
                 src="https://res.cloudinary.com/dbcygr0pi/image/upload/v1736774363/WhatsApp_Image_2025-01-10_at_17.55-Photoroom_tafyqg.jpg"
                 alt="Team Member"
               />
-              <h4>Oluwatobi Daniel</h4>
-              <p>Volunteer</p>
+              <h4>Helianne Duke</h4>
+              <p>Committee member's</p>
             </TeamMember>
             <TeamMember>
               <img
                 src="https://res.cloudinary.com/dbcygr0pi/image/upload/v1736774363/WhatsApp_Image_2025-01-10_at_17.55-Photoroom_tafyqg.jpg"
                 alt="Team Member"
               />
-              <h4>Oluwatobi Daniel</h4>
-              <p>Volunteer</p>
+              <h4>Elizabeth James</h4>
+              <p>Committee member's</p>
             </TeamMember>
             <TeamMember>
               <img
                 src="https://res.cloudinary.com/dbcygr0pi/image/upload/v1736774363/WhatsApp_Image_2025-01-10_at_17.55-Photoroom_tafyqg.jpg"
                 alt="Team Member"
               />
-              <h4>Oluwatobi Daniel</h4>
-              <p>Volunteer</p>
+              <h4>Catreena Holliday</h4>
+              <p>Committee member's</p>
             </TeamMember>
           </TeamSection>
           <CTA to="/commitee">See more</CTA>
@@ -127,6 +127,7 @@ const TeamSection = styled.div`
   gap: 20px;
   flex-wrap: wrap;
   margin-top: 40px;
+  margin-bottom: 30px;
 `;
 
 const TeamMember = styled.div`
@@ -149,14 +150,14 @@ const TeamMember = styled.div`
   }
 
   h4 {
-    font-size: 18px;
+    font-size: 15px;
     margin-top: 20px;
-    color: #555;
+    color: #559;
     font-weight: 600;
   }
 
   p {
-    font-size: 16px;
+    font-size: 13px;
     color: #888;
     font-weight: 800;
   }
@@ -281,7 +282,6 @@ const Progress = styled.div`
 
 const ImageWrapper = styled.div`
   max-width: 500px;
-
   @media (max-width: 768px) {
     margin-top: 40px;
   }

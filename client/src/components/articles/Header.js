@@ -68,7 +68,7 @@ const NavItem = styled.li`
   &:hover > div {
     display: block;
     opacity: 1;
-    transform: translateY(0); // Animate dropdown
+    // transform: translateY(0);
   }
 `;
 
@@ -84,8 +84,17 @@ const DropdownContent = styled.div`
   z-index: 999;
   border-radius: 5px;
   opacity: 0;
-  transform: translateY(-10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  animation: floatParticles 0.2s linear;
+
+  @keyframes floatParticles {
+    0% {
+      transform: translateY(-10%);
+    }
+
+    100% {
+      transform: translateY(1%);
+    }
+  }
 `;
 
 const DropdownItem = styled(Link)`
@@ -116,7 +125,7 @@ const SideNav = styled.div`
   position: fixed;
   top: 0;
   left: ${({ show }) => (show ? "0" : "-100%")};
-  width: 70%;
+  width: 80%;
   height: 100vh;
   background-color: #333;
   color: white;

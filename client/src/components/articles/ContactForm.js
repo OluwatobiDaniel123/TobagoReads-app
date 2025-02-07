@@ -2,7 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import emailjs from "emailjs-com";
 import { useRef, useState } from "react";
-import { FaCheckCircle, FaTimesCircle } from "react-icons/fa";
+import {
+  FaCheckCircle,
+  FaFacebook,
+  FaInstagram,
+  FaTimesCircle,
+  FaTwitter,
+  FaWhatsapp,
+} from "react-icons/fa";
 
 const ContactPage = () => {
   const form = useRef();
@@ -68,10 +75,22 @@ const ContactPage = () => {
           <Detail>
             <h3>Connect on Social Media</h3>
             <SocialLinks>
-              <a href="#">Facebook</a>
-              <a href="#">Twitter</a>
-              <a href="#">Instagram</a>
-              <a href="#">LinkedIn</a>
+              <a href="#">
+                {" "}
+                <FaFacebook /> Facebook
+              </a>
+              <a href="#">
+                {" "}
+                <FaTwitter /> Twitter
+              </a>
+              <a href="#">
+                {" "}
+                <FaInstagram /> Instagram
+              </a>
+              <a href="#">
+                {" "}
+                <FaWhatsapp /> Whatsapp
+              </a>
             </SocialLinks>
           </Detail>
         </ContactDetails>
@@ -228,14 +247,18 @@ const SocialLinks = styled.div`
 
   a {
     color: rgba(255, 255, 255, 0.8);
-
+    display: flex;
+    align-items: center;
+    gap: 10px;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s ease;
+    // transition: color 0.3s ease;
+    // transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-    &:hover {
-      color: darkblue;
-    }
+    // &:hover {
+    //   transition: 0.3s ease;
+    //   transform: scale(0.9);
+    // }
   }
 `;
 
@@ -255,6 +278,10 @@ const ContactForm = styled.div`
   p {
     margin-bottom: 30px;
     color: #777;
+  }
+
+  @media (max-width: 7768px) {
+    padding: 20px;
   }
 `;
 

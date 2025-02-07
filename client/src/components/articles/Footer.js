@@ -23,6 +23,10 @@ const FooterSection = styled.div`
   flex: 1;
   min-width: 200px;
   margin: 20px;
+  @media (max-width: 768px) {
+    min-width: 150px;
+    margin: 10px;
+  }
 `;
 
 const FooterHeader = styled.h3`
@@ -48,6 +52,10 @@ const FooterLink = styled.a`
 
   &:hover {
     color: lightblue;
+  }
+
+  @media (max-width: 768px) {
+    width: 170px;
   }
 `;
 
@@ -163,7 +171,10 @@ const Footer = () => {
         }}
       >
         <FooterText style={{ marginTop: "20px" }}>
-          &copy; {new Date().getFullYear()} Tobago Reads. All rights reserved.
+          &copy; {new Date().getFullYear()} TobagoReads. All rights reserved.
+          <a style={{ textAlign: "center", color: "darkgrey" }} href="#">
+            Powered By Danovalab
+          </a>
         </FooterText>
       </div>
     </FooterContainer>

@@ -12,6 +12,10 @@ const HeroSection = styled.section`
   color: #fff;
   text-align: center;
   padding: 80px 20px;
+
+  @media (max-width: 768px) {
+    padding: 40px 10px;
+  }
 `;
 
 const HeroText = styled.div`
