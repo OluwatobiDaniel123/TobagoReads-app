@@ -1,486 +1,368 @@
 import React, { useState } from "react";
-import "./Dashboard.css";
-import { PieChart, Pie, Cell, Tooltip, Legend } from "recharts";
-import { Link } from "react-router-dom";
-import { IoClose, IoMenuOutline } from "react-icons/io5";
-import Customers from "./Customers";
-import { BellFilled, MailOutlined } from "@ant-design/icons";
-import { Badge, Drawer, List, Space, Typography } from "antd";
-import { useEffect } from "react";
-import { getComments, getOrders } from "../Dashboard/API";
-import Inventory from "./Inventory";
+import {
+  CircleDollarSign,
+  Users,
+  Heart,
+  TrendingUp,
+  Calendar,
+  Home,
+  PieChart,
+  Settings,
+  Mail,
+  Menu,
+  X,
+} from "lucide-react";
 
-export const Donors = () => {
-  const [isSidebarOpen, setSidebarOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+import {
+  PieChart as ReChart,
+  Pie,
+  Tooltip,
+  Legend,
+  Cell,
+  ResponsiveContainer,
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+} from "recharts";
 
-  const toggleSidebar = () => {
-    setSidebarOpen(!isSidebarOpen);
-  };
-  const [comments, setComments] = useState([]);
-  const [orders, setOrders] = useState([]);
-  const [commentsOpen, setCommentsOpen] = useState(false);
-  const [notificationsOpen, setNotificationsOpen] = useState(false);
+const CustomCard = ({ children, className = "" }) => (
+  <div className={`bg-white rounded-lg shadow-md overflow-hidden ${className}`}>
+    {children}
+  </div>
+);
 
-  useEffect(() => {
-    getComments().then((res) => {
-      setComments(res.comments);
-    });
-    getOrders().then((res) => {
-      setOrders(res.products);
-    });
-  }, []);
+const CustomCardHeader = ({ children, className = "" }) => (
+  <div className={`p-4 border-b border-gray-100 ${className}`}>{children}</div>
+);
 
-  React.useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
+const CustomCardTitle = ({ children, className = "" }) => (
+  <h3 className={`text-lg font-semibold text-gray-900 ${className}`}>
+    {children}
+  </h3>
+);
 
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-  return (
-    <div>
-      <div className={`sidebar ${isSidebarOpen ? "open" : "closed"}`}>
-        <div className="headerToggle">
-          <div className="logo">TobagoReads</div>
-
-          {isMobile && (
-            <div className="sidebar-toggle" onClick={toggleSidebar}>
-              <IoClose />
-            </div>
-          )}
-        </div>
-        <ul className="nav-links">
-          <Link to="/dashboard">
-            <li>Overview</li>
-          </Link>
-          <Link to="/campaigns">
-            <li>Campaigns</li>
-          </Link>
-          <Link to="/donors">
-            <li>Donors</li>
-          </Link>
-          <Link to="/reports">
-            <li>Reports</li>
-          </Link>
-        </ul>
+const Sidebar = ({ isOpen, toggleSidebar }) => (
+  <div
+    className={`fixed left-0 top-0 h-full bg-gray-900 text-white transition-all duration-300 ${
+      isOpen ? "w-64" : "w-0"
+    } overflow-hidden z-50`}
+  >
+    <div className="p-4">
+      <div className="flex justify-between items-center mb-8">
+        <h2 className="text-xl font-bold">Charity Admin</h2>
+        <button
+          onClick={toggleSidebar}
+          className="lg:hidden text-white hover:text-gray-300"
+        >
+          <X className="h-6 w-6" />
+        </button>
       </div>
-      <div className="main-content">
-        <div className="topbar">
-          {isMobile && (
-            <IoMenuOutline className="sidebar-toggle" onClick={toggleSidebar} />
-          )}
-          <h1 className="dashboard-title">TobagoReads Admin</h1>
-          <Space>
-            <Badge count={comments.length} dot>
-              <MailOutlined
-                style={{ fontSize: 24 }}
-                onClick={() => {
-                  setCommentsOpen(true);
-                }}
-              />
-            </Badge>
-            <Badge count={orders.length}>
-              <BellFilled
-                style={{ fontSize: 24 }}
-                onClick={() => {
-                  setNotificationsOpen(true);
-                }}
-              />
-            </Badge>
-          </Space>
-          <Drawer
-            title="Comments"
-            open={commentsOpen}
-            onClose={() => {
-              setCommentsOpen(false);
-            }}
-            maskClosable
-          >
-            <List
-              dataSource={comments}
-              renderItem={(item) => {
-                return <List.Item>{item.body}</List.Item>;
-              }}
-            ></List>
-          </Drawer>
-          <Drawer
-            title="Notifications"
-            open={notificationsOpen}
-            onClose={() => {
-              setNotificationsOpen(false);
-            }}
-            maskClosable
-          >
-            <List
-              dataSource={orders}
-              renderItem={(item) => {
-                return (
-                  <List.Item>
-                    <Typography.Text strong>{item.title}</Typography.Text> has
-                    been ordered!
-                  </List.Item>
-                );
-              }}
-            ></List>
-          </Drawer>
+      {[
+        { icon: Home, label: "Dashboard" },
+        { icon: PieChart, label: "Analytics" },
+        { icon: Calendar, label: "Events" },
+        { icon: Mail, label: "Messages" },
+        { icon: Settings, label: "Settings" },
+      ].map((item, index) => (
+        <div
+          key={index}
+          className="flex items-center space-x-3 p-3 rounded hover:bg-gray-800 cursor-pointer mb-2 transition-colors duration-200"
+        >
+          <item.icon className="h-5 w-5" />
+          <span>{item.label}</span>
         </div>
-        <Customers />
-      </div>
+      ))}
     </div>
+  </div>
+);
+
+const StatCard = ({ title, value, icon: Icon, description, trend }) => (
+  <CustomCard className="h-full">
+    <div className="p-4">
+      <div className="flex justify-between items-center mb-2">
+        <span className="text-sm font-medium text-gray-500">{title}</span>
+        <Icon className="h-4 w-4 text-gray-500" />
+      </div>
+      <div className="text-2xl font-bold text-gray-900">{value}</div>
+      <p className="text-xs text-gray-500 mt-1">{description}</p>
+      {trend && (
+        <div className="flex items-center mt-2">
+          <TrendingUp className="h-3 w-3 text-green-500 mr-1" />
+          <span className="text-xs text-green-500">{trend}</span>
+        </div>
+      )}
+    </div>
+  </CustomCard>
+);
+
+const DonationDistribution = () => {
+  const data = [
+    { name: "Education", value: 35 },
+    { name: "Healthcare", value: 25 },
+    { name: "Environment", value: 20 },
+    { name: "Food Security", value: 20 },
+  ];
+  const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
+
+  const CustomTooltip = ({ active, payload }) => {
+    if (active && payload && payload.length) {
+      const data = payload[0].payload;
+      const colorIndex = data ? data.name : 0;
+      return (
+        <div className="bg-white p-4 shadow-lg rounded-lg border border-gray-200">
+          <p
+            className="font-semibold"
+            style={{ color: COLORS[data ? data.index : 0] }}
+          >
+            {data.name}
+          </p>
+          <p className="text-gray-600">{data.value}% of donations</p>
+        </div>
+      );
+    }
+    return null;
+  };
+
+  return (
+    <CustomCard className="h-full">
+      <CustomCardHeader>
+        <CustomCardTitle>Donation Distribution</CustomCardTitle>
+      </CustomCardHeader>
+      <div className="p-4 h-64">
+        <ResponsiveContainer width="100%" height="100%">
+          <ReChart>
+            <Pie
+              data={data}
+              cx="50%"
+              cy="50%"
+              innerRadius={40}
+              outerRadius={90}
+              paddingAngle={1}
+              dataKey="value"
+            >
+              {data.map((entry, index) => (
+                <Cell
+                  key={entry.name}
+                  fill={COLORS[index]}
+                  stroke="white"
+                  strokeWidth={2}
+                />
+              ))}
+            </Pie>
+            <Tooltip content={<CustomTooltip />} />
+            <Legend
+              formatter={(value) => (
+                <span className="text-sm text-gray-700">{value}</span>
+              )}
+            />
+          </ReChart>
+        </ResponsiveContainer>
+      </div>
+    </CustomCard>
   );
 };
 
-export const Campaigns = () => {
-  const [isSidebarOpen, setSidebarOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+const MonthlyTrend = () => {
+  const data = [
+    { name: "Jan", amount: 15000 },
+    { name: "Feb", amount: 18000 },
+    { name: "Mar", amount: 22000 },
+    { name: "Apr", amount: 21000 },
+    { name: "May", amount: 25000 },
+    { name: "Jun", amount: 28000 },
+  ];
 
-  const toggleSidebar = () => {
-    setSidebarOpen(!isSidebarOpen);
-  };
-  const [comments, setComments] = useState([]);
-  const [orders, setOrders] = useState([]);
-  const [commentsOpen, setCommentsOpen] = useState(false);
-  const [notificationsOpen, setNotificationsOpen] = useState(false);
-
-  useEffect(() => {
-    getComments().then((res) => {
-      setComments(res.comments);
-    });
-    getOrders().then((res) => {
-      setOrders(res.products);
-    });
-  }, []);
-
-  React.useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
   return (
-    <div>
-      <div className={`sidebar ${isSidebarOpen ? "open" : "closed"}`}>
-        <div className="headerToggle">
-          <div className="logo">TobagoReads</div>
-
-          {isMobile && (
-            <div className="sidebar-toggle" onClick={toggleSidebar}>
-              <IoClose />
-            </div>
-          )}
-        </div>
-        <ul className="nav-links">
-          <Link to="/dashboard">
-            <li>Overview</li>
-          </Link>
-          <Link to="/campaigns">
-            <li>Campaigns</li>
-          </Link>
-          <Link to="/donors">
-            <li>Donors</li>
-          </Link>
-          <Link to="/reports">
-            <li>Reports</li>
-          </Link>
-        </ul>
+    <CustomCard className="h-full">
+      <CustomCardHeader>
+        <CustomCardTitle>Monthly Donations Trend</CustomCardTitle>
+      </CustomCardHeader>
+      <div className="p-4 h-64">
+        <ResponsiveContainer width="100%" height="100%">
+          <LineChart data={data}>
+            <XAxis dataKey="name" />
+            <YAxis />
+            <Tooltip />
+            <Line
+              type="monotone"
+              dataKey="amount"
+              stroke="#8884d8"
+              strokeWidth={2}
+            />
+          </LineChart>
+        </ResponsiveContainer>
       </div>
-      <div className="main-content">
-        <div className="topbar">
-          {isMobile && (
-            <IoMenuOutline className="sidebar-toggle" onClick={toggleSidebar} />
-          )}
-          <h1 className="dashboard-title">TobagoReads Admin</h1>
-          <Space>
-            <Badge count={comments.length} dot>
-              <MailOutlined
-                style={{ fontSize: 24 }}
-                onClick={() => {
-                  setCommentsOpen(true);
-                }}
-              />
-            </Badge>
-            <Badge count={orders.length}>
-              <BellFilled
-                style={{ fontSize: 24 }}
-                onClick={() => {
-                  setNotificationsOpen(true);
-                }}
-              />
-            </Badge>
-          </Space>
-          <Drawer
-            title="Comments"
-            open={commentsOpen}
-            onClose={() => {
-              setCommentsOpen(false);
-            }}
-            maskClosable
-          >
-            <List
-              dataSource={comments}
-              renderItem={(item) => {
-                return <List.Item>{item.body}</List.Item>;
-              }}
-            ></List>
-          </Drawer>
-          <Drawer
-            title="Notifications"
-            open={notificationsOpen}
-            onClose={() => {
-              setNotificationsOpen(false);
-            }}
-            maskClosable
-          >
-            <List
-              dataSource={orders}
-              renderItem={(item) => {
-                return (
-                  <List.Item>
-                    <Typography.Text strong>{item.title}</Typography.Text> has
-                    been ordered!
-                  </List.Item>
-                );
-              }}
-            ></List>
-          </Drawer>
-        </div>
-        <Inventory />
-      </div>
-    </div>
+    </CustomCard>
   );
 };
 
-const donationData = [
-  { name: "Education", value: 400 },
-  { name: "Food", value: 300 },
-  { name: "Healthcare", value: 300 },
-  { name: "Others", value: 200 },
-];
+const RecentDonations = () => (
+  <CustomCard className="h-full">
+    <CustomCardHeader>
+      <CustomCardTitle>Recent Donations</CustomCardTitle>
+    </CustomCardHeader>
+    <div className="p-4">
+      <div className="space-y-4">
+        {[
+          {
+            name: "Anonymous",
+            amount: "$500",
+            date: "2 hours ago",
+            cause: "Education",
+          },
+          {
+            name: "Sarah Wilson",
+            amount: "$1,200",
+            date: "5 hours ago",
+            cause: "Healthcare",
+          },
+          {
+            name: "James Brown",
+            amount: "$750",
+            date: "1 day ago",
+            cause: "Environment",
+          },
+          {
+            name: "Emily Chen",
+            amount: "$2,000",
+            date: "2 days ago",
+            cause: "Food Security",
+          },
+        ].map((donation, index) => (
+          <div
+            key={index}
+            className="flex items-center justify-between border-b border-gray-100 pb-2 last:border-0"
+          >
+            <div>
+              <div className="font-medium text-gray-900">{donation.name}</div>
+              <div className="text-sm text-gray-500">{donation.cause}</div>
+            </div>
+            <div className="text-right">
+              <div className="font-medium text-gray-900">{donation.amount}</div>
+              <div className="text-sm text-gray-500">{donation.date}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </CustomCard>
+);
 
-const COLORS = ["#4CAF50", "#2196F3", "#FFC107", "#FF5722"];
-
-const recentActivities = [
-  { id: 1, name: "John Doe", activity: "Donated $200", date: "2025-01-20" },
-  {
-    id: 2,
-    name: "Jane Smith",
-    activity: "Volunteered 5 hours",
-    date: "2025-01-18",
-  },
-  { id: 3, name: "Acme Corp", activity: "Sponsored $1000", date: "2025-01-15" },
-  { id: 3, name: "Acme Corp", activity: "Sponsored $1000", date: "2025-01-15" },
-  { id: 3, name: "Acme Corp", activity: "Sponsored $1000", date: "2025-01-15" },
-  { id: 3, name: "Acme Corp", activity: "Sponsored $1000", date: "2025-01-15" },
-];
+const UpcomingEvents = () => (
+  <CustomCard className="h-full">
+    <CustomCardHeader>
+      <CustomCardTitle>Upcoming Events</CustomCardTitle>
+    </CustomCardHeader>
+    <div className="p-4">
+      <div className="space-y-4">
+        {[
+          {
+            name: "Annual Fundraising Gala",
+            date: "March 15, 2025",
+            location: "Grand Hotel",
+          },
+          {
+            name: "Community Outreach Day",
+            date: "March 20, 2025",
+            location: "City Park",
+          },
+          {
+            name: "Volunteer Training",
+            date: "March 25, 2025",
+            location: "Main Office",
+          },
+        ].map((event, index) => (
+          <div
+            key={index}
+            className="flex items-center space-x-4 border-b border-gray-100 pb-2 last:border-0"
+          >
+            <Calendar className="h-8 w-8 text-blue-500" />
+            <div>
+              <div className="font-medium text-gray-900">{event.name}</div>
+              <div className="text-sm text-gray-500">
+                {event.date} • {event.location}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </CustomCard>
+);
 
 const Dashboard = () => {
-  const [isSidebarOpen, setSidebarOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-  const [comments, setComments] = useState([]);
-  const [orders, setOrders] = useState([]);
-  const [commentsOpen, setCommentsOpen] = useState(false);
-  const [notificationsOpen, setNotificationsOpen] = useState(false);
-
-  const toggleSidebar = () => {
-    setSidebarOpen(!isSidebarOpen);
-  };
-
-  React.useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  useEffect(() => {
-    getComments().then((res) => {
-      setComments(res.comments);
-    });
-    getOrders().then((res) => {
-      setOrders(res.products);
-    });
-  }, []);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <div className="dashboard-container">
-      <div className={`sidebar ${isSidebarOpen ? "open" : "closed"}`}>
-        <div className="headerToggle">
-          <div className="logo">TobagoReads</div>
+    <div className="min-h-screen bg-gray-50">
+      <Sidebar
+        isOpen={sidebarOpen}
+        toggleSidebar={() => setSidebarOpen(!sidebarOpen)}
+      />
 
-          {isMobile && (
-            <div className="sidebar-toggle" onClick={toggleSidebar}>
-              <IoClose />
+      <div
+        className={`transition-all duration-300 ${
+          sidebarOpen ? "lg:ml-64" : "ml-0"
+        }`}
+      >
+        <div className="p-6">
+          <div className="flex justify-between items-center mb-6">
+            <div className="flex items-center space-x-4">
+              <button
+                onClick={() => setSidebarOpen(!sidebarOpen)}
+                className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
+              >
+                <Menu className="h-6 w-6" />
+              </button>
+              <h1 className="text-2xl font-bold text-gray-900 ">
+                Charity Dashboard
+              </h1>
             </div>
-          )}
+            <div className="text-sm text-gray-500">Last updated: Just now</div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+            <StatCard
+              title="Total Donations"
+              value="$245,678"
+              icon={CircleDollarSign}
+              description="Total donations this year"
+              trend="+12.3% from last month"
+            />
+            <StatCard
+              title="Active Donors"
+              value="1,234"
+              icon={Users}
+              description="Regular monthly donors"
+              trend="+5.8% from last month"
+            />
+            <StatCard
+              title="Lives Impacted"
+              value="45,678"
+              icon={Heart}
+              description="People helped this year"
+              trend="+15.2% from last month"
+            />
+            <StatCard
+              title="Success Rate"
+              value="94%"
+              icon={TrendingUp}
+              description="Project completion rate"
+              trend="+2.1% from last month"
+            />
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-6">
+            <DonationDistribution />
+            <MonthlyTrend />
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <RecentDonations />
+            <UpcomingEvents />
+          </div>
         </div>
-        <ul className="nav-links">
-          <Link to="/dashboard">
-            <li>Overview</li>
-          </Link>
-          <Link to="/campaigns">
-            <li>Campaigns</li>
-          </Link>
-          <Link to="/donors">
-            <li>Donors</li>
-          </Link>
-          <Link to="/reports">
-            <li>Reports</li>
-          </Link>
-        </ul>
-      </div>
-
-      <div className="main-content">
-        <div className="topbar">
-          {isMobile && (
-            <IoMenuOutline className="sidebar-toggle" onClick={toggleSidebar} />
-          )}
-          <h1 className="dashboard-title">TobagoReads Admin</h1>
-          <Space>
-            <Badge count={comments.length} dot>
-              <MailOutlined
-                style={{ fontSize: 24 }}
-                onClick={() => {
-                  setCommentsOpen(true);
-                }}
-              />
-            </Badge>
-            <Badge count={orders.length}>
-              <BellFilled
-                style={{ fontSize: 24 }}
-                onClick={() => {
-                  setNotificationsOpen(true);
-                }}
-              />
-            </Badge>
-          </Space>
-          <Drawer
-            title="Comments"
-            open={commentsOpen}
-            onClose={() => {
-              setCommentsOpen(false);
-            }}
-            maskClosable
-          >
-            <List
-              dataSource={comments}
-              renderItem={(item) => {
-                return <List.Item>{item.body}</List.Item>;
-              }}
-            ></List>
-          </Drawer>
-          <Drawer
-            title="Notifications"
-            open={notificationsOpen}
-            onClose={() => {
-              setNotificationsOpen(false);
-            }}
-            maskClosable
-          >
-            <List
-              dataSource={orders}
-              renderItem={(item) => {
-                return (
-                  <List.Item>
-                    <Typography.Text strong>{item.title}</Typography.Text> has
-                    been donated!
-                  </List.Item>
-                );
-              }}
-            ></List>
-          </Drawer>
-        </div>
-
-        <div className="dashboard-main">
-          <section className="overview-section grid">
-            <div className="card">
-              <h2>Total Donations</h2>
-              <p className="value">$15,200</p>
-            </div>
-            <div className="card">
-              <h2>Active Campaigns</h2>
-              <p className="value">8</p>
-            </div>
-            <div className="card">
-              <h2>Volunteer Hours</h2>
-              <p className="value">540</p>
-            </div>
-          </section>
-
-          <section className="chart-section">
-            <div className="section-header">
-              <h2>Donation Distribution</h2>
-            </div>
-            <div className="chart-wrapper">
-              <PieChart width={353} height={400}>
-                <Pie
-                  data={donationData}
-                  cx="50%"
-                  cy="53%"
-                  labelLine={true}
-                  label={({ name, percent }) =>
-                    `${name} (${(percent * 100).toFixed(0)}%)`
-                  }
-                  outerRadius={120}
-                  width="100%"
-                  fill="#8884d8"
-                  dataKey="value"
-                >
-                  {donationData.map((entry, index) => (
-                    <Cell
-                      key={`cell-${index}`}
-                      fill={COLORS[index % COLORS.length]}
-                    />
-                  ))}
-                </Pie>
-                <Tooltip />
-                <Legend />
-              </PieChart>
-            </div>
-          </section>
-
-          <section className="activity-section">
-            <div className="section-header">
-              <h2>Recent Activities</h2>
-            </div>
-            <table className="activity-table">
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Activity</th>
-                  <th>Date</th>
-                </tr>
-              </thead>
-              <tbody>
-                {recentActivities.map((activity) => (
-                  <tr key={activity.id}>
-                    <td>{activity.name}</td>
-                    <td>{activity.activity}</td>
-                    <td>{activity.date}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </section>
-        </div>
-
-        <footer className="dashboard-footer">
-          <p>© {new Date().getFullYear()} TobagoReads. All rights reserved.</p>
-        </footer>
       </div>
     </div>
   );

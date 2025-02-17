@@ -75,7 +75,66 @@ const HighlightsGrid = styled.div`
 
 const HighlightCard = styled.div`
   position: relative;
-  background: url("https://res.cloudinary.com/dbcygr0pi/image/upload/v1738154907/ec51d3c9-8810-4df2-bc2c-be938c32463c_c1d994.png")
+  background: url("https://res.cloudinary.com/dbcygr0pi/image/upload/v1739253097/img11_b70dn7.jpg")
+    no-repeat center center;
+  background-size: cover;
+  border-radius: 15px;
+  overflow: hidden;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    transition: background 0.4s ease;
+    z-index: 0;
+  }
+
+  &:hover::before {
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  h3,
+  p {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+  }
+
+  h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  @media (max-width: 768px) {
+    padding: 20px;
+    h3 {
+      font-size: 1.8rem;
+    }
+    p {
+      font-size: 0.9rem;
+    }
+  }
+`;
+
+const HighlightCard3 = styled.div`
+  position: relative;
+  background: url("https://res.cloudinary.com/dbcygr0pi/image/upload/v1737224874/img1_bs5nap.jpg")
     no-repeat center center;
   background-size: cover;
   border-radius: 15px;
@@ -317,7 +376,7 @@ const CompanyHighlights = () => {
             <p>Lives Changed</p>
           </HighlightContent>
         </HighlightCard1>
-        <HighlightCard>
+        <HighlightCard3>
           <IconWrapper>
             <FaChartLine style={{ color: "#00BCD4" }} />
           </IconWrapper>
@@ -327,7 +386,7 @@ const CompanyHighlights = () => {
             </h3>
             <p>Projects Completed</p>
           </HighlightContent>
-        </HighlightCard>
+        </HighlightCard3>
         <HighlightCard4>
           <IconWrapper>
             <FaGlobeAfrica style={{ color: "blue" }} />

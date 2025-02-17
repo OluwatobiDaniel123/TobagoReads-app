@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import styled, { keyframes } from "styled-components";
 
-
 const settings = {
   fade: true,
   infinite: true,
@@ -15,7 +14,6 @@ const settings = {
   arrows: false,
   pauseOnHover: false,
 };
-
 
 const fadeIn = keyframes`
   from {
@@ -33,7 +31,6 @@ const gradientShift = keyframes`
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 `;
-
 
 const Image = styled.img`
   width: 100%;
@@ -163,10 +160,9 @@ const textContent = [
     LinkText: "Explore More",
     link: "/explore",
     image:
-      "https://res.cloudinary.com/dbcygr0pi/image/upload/v1737224874/img1_bs5nap.jpg",
+      "https://res.cloudinary.com/dbcygr0pi/image/upload/v1739256701/img15_amdguq.jpg",
   },
 ];
-
 
 const Fade = () => {
   return (

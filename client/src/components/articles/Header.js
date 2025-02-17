@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { IoClose, IoMenuOutline } from "react-icons/io5";
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { IoMdArrowDropdown } from "react-icons/io";
 
 const HeaderContainer = styled.div`
   background-color: white;
@@ -59,7 +60,6 @@ const NavItem = styled.li`
     transition: all 0.3s ease;
 
     &:hover {
-      color: #fff;
       background-color: #007bff;
       transform: translateY(-2px);
     }
@@ -101,12 +101,12 @@ const DropdownItem = styled(Link)`
   width: 335px;
   display: block;
   color: #333;
-  padding: 10px 20px;
+  // padding: 10px 20px;
   text-decoration: none;
-  &:hover {
-    background-color: #007bff;
-    color: white;
-  }
+  // &:hover {
+  //   background-color: #007bff;
+  //   color: white;
+  // }
 `;
 
 const NavIcon = styled.div`
@@ -155,7 +155,7 @@ const SideNavItem = styled(Link)`
 `;
 
 const QuoteButton = styled.button`
-  background: linear-gradient(45deg, #007bff, #00d4ff);
+  background: linear-gradient(135deg, #007bff, #6610f2);
   color: white;
   padding: 10px 20px;
   border-radius: 6px;
@@ -167,16 +167,6 @@ const QuoteButton = styled.button`
     transform: scale(1.05);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   }
-`;
-
-const DropdownDiv = styled.div`
-  display: flex;
-  padding: 20px 0;
-  gap: 10px;
-  margin-bottom: 20px;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.05);
-  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
 `;
 
 const SocialIcons = styled.div`
@@ -243,39 +233,26 @@ const Header = () => {
               {path === "/Projects" && (
                 <DropdownContent>
                   <DropdownItem to="/portfolio#projects">
-                    Our Projects Our Projects Our Projects
+                    Shoebox of Love
                   </DropdownItem>
                   <DropdownItem to="/portfolio#case-studies">
-                    Case Studies
+                    Adopt A Scholar
                   </DropdownItem>
-                </DropdownContent>
-              )}
-
-              {path === "/About" && (
-                <DropdownContent>
-                  <h4>About Us</h4>
-                  <DropdownDiv>
-                    <div>
-                      <LogoImage
-                        src="https://res.cloudinary.com/dbcygr0pi/image/upload/v1737249931/img6_cfbqfk.jpg"
-                        loading="lazy"
-                        alt="Logo"
-                      />
-                      <span>Lagos state ikeja</span>
-                    </div>
-
-                    <span>
-                      hello Phone: 123-456-7890 Phone: 123-456-7890 Phone:
-                      123-456-7890 Phone: 123-456-7890 Phone: 123-456-7890
-                      Phone: 123-456-7890 Phone: 123-456-7890 Phone:
-                      123-456-7890 Phone: 123-456-7890 Phone: 123-456-7890
-                      Phone: 123-456-7890 Phone: 123-456-7890 Phone:
-                      123-456-7890 Phone: 123-456-7890 Phone: 123-456-7890
-                    </span>
-                  </DropdownDiv>
-                  <DropdownItem to="/about#team">Meet the Team</DropdownItem>
-                  <DropdownItem to="/about#our-story">Our Story</DropdownItem>
-                  <DropdownItem to="/about#values">Our Values</DropdownItem>
+                  <DropdownItem to="/portfolio#case-studies">
+                    Scholarships
+                  </DropdownItem>
+                  <DropdownItem to="/portfolio#case-studies">
+                    Reading Marathon
+                  </DropdownItem>
+                  <DropdownItem to="/portfolio#case-studies">
+                    Feminine Hygiene Packs
+                  </DropdownItem>
+                  <DropdownItem to="/portfolio#case-studies">
+                    Literacy Day
+                  </DropdownItem>{" "}
+                  <DropdownItem to="/portfolio#case-studies">
+                    Book Bags and School Supplies
+                  </DropdownItem>
                 </DropdownContent>
               )}
 

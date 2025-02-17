@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import "./Map.css";
 
 const Map = () => {
-  const [selectedLocation, setSelectedLocation] = useState("tobago");
+  const [selectedLocation, setSelectedLocation] = useState("trinidad");
 
-  // Locations with corresponding Google Maps embed URLs
   const locations = [
     {
       id: "trinidad",

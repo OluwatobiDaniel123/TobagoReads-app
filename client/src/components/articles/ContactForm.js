@@ -252,13 +252,12 @@ const SocialLinks = styled.div`
     gap: 10px;
     text-decoration: none;
     font-weight: bold;
-    // transition: color 0.3s ease;
+    transition: 0.3s ease;
     // transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-    // &:hover {
-    //   transition: 0.3s ease;
-    //   transform: scale(0.9);
-    // }
+    &:hover {
+      transform: translateX(4px);
+    }
   }
 `;
 
@@ -319,16 +318,18 @@ const Textarea = styled.textarea`
 
 const Button = styled.button`
   padding: 15px 30px;
-  background: #3498db;
+  background: linear-gradient(135deg, #007bff, #6610f2);
   color: #fff;
   font-size: 1rem;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: 0.3s ease;
 
   &:hover {
-    background: #2c3e50;
+    // background: #2c3e50;
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, #6610f2, #007bff);
   }
 `;
 

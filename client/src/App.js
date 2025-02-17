@@ -14,16 +14,16 @@ import DonationForm from "./components/articles/DonationForm";
 import ProjectPage from "./components/articles/ProjectPage";
 import ContactPage from "./components/articles/ContactForm";
 import Dashboard, { Campaigns, Donors } from "./components/Dashboard/Dashboard";
-import Chatbox from "./components/articles/Chatbox/Chatbot";
-import CommitteePage from "./components/articles/Commitee";
+import Chatbot from "./components/articles/Chatbot/Chatbot";
 import Committee from "./components/articles/CommiteePage";
+import Map from "./components/articles/Map";
 
 const Layout = () => {
   return (
     <div>
       <Header />
       <Outlet />
-      <Chatbox />
+      <Chatbot />
       <Footer />
     </div>
   );
@@ -39,11 +39,12 @@ const router = createBrowserRouter(
         <Route path="/About" element={<About />} />
         <Route path="/Contact" element={<ContactPage />} />
         <Route path="/commitee" element={<Committee />} />
+        <Route path="/maps" element={<Map />} />
       </Route>
       <Route path="/dashboard" element={<Dashboard />} />
-      <Route path="/donors" element={<Donors />} />
-      <Route path="/campaigns" element={<Campaigns />} />
-      <Route path="/reports" element={<Campaigns />} />
+      {/* <Route path="/donors" element={<Donors />} /> */}
+      {/* <Route path="/campaigns" element={<Campaigns />} /> */}
+      {/* <Route path="/reports" element={<Campaigns />} /> */}
     </Route>
   )
 );

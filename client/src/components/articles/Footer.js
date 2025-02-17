@@ -67,9 +67,10 @@ const SocialIcons = styled.div`
     color: #fff;
     margin: 0 10px;
     font-size: 20px;
-
+    transition: 0.3s ease;
     &:hover {
       color: lightblue;
+      transform: translateY(-3px);
     }
   }
 `;
@@ -112,8 +113,8 @@ const Footer = () => {
           <FooterLink href="/Projects">Projects</FooterLink>
           <FooterLink href="/Contact">Contact</FooterLink>
           <FooterLink href="/Donate">Donate Now</FooterLink>
-          <FooterLink href="#">Blog</FooterLink>
           <FooterLink href="/commitee">The Committee</FooterLink>
+          <FooterLink href="/maps">Tobago Reads Maps</FooterLink>
         </FooterSection>
         <FooterSection>
           <FooterHeader>Projects</FooterHeader>

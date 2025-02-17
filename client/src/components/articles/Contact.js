@@ -130,11 +130,11 @@ const ContactButton = styled.button`
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  // transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, #6610f2, #007bff);
   }
 
   &:disabled {

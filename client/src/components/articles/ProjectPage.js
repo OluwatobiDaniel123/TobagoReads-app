@@ -7,7 +7,7 @@ const PageWrapper = styled.div`
 `;
 
 const HeroSection = styled.section`
-  background: url("https://res.cloudinary.com/dbcygr0pi/image/upload/v1737385588/vecteezy_ai-generated-portrait-of-smiling-child-girl-with-water-in_35596918_ncwisw.jpg")
+  background: url("https://res.cloudinary.com/dbcygr0pi/image/upload/v1739256377/img14_i2hmps.jpg")
     no-repeat center center/cover;
   color: #fff;
   text-align: center;
@@ -33,17 +33,17 @@ const HeroText = styled.div`
   }
 
   button {
-    background: #ff6f61;
+    background: linear-gradient(135deg, #007bff, #6610f2);
     color: #fff;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1rem;
-    transition: background 0.3s;
-
+    transition: 0.3s ease;
     &:hover {
-      background: #e85a50;
+      transform: translateY(-3px);
+      background: linear-gradient(135deg, #6610f2, #007bff);
     }
   }
 `;
@@ -96,17 +96,17 @@ const ProjectCard = styled.div`
   }
 
   button {
-    background: #007bff;
+    background: linear-gradient(135deg, #007bff, #6610f2);
     color: #fff;
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 0.9rem;
-    transition: background 0.3s;
-
+    transition: 0.3s ease;
     &:hover {
-      background: #0056b3;
+      transform: translateY(-3px);
+      background: linear-gradient(135deg, #6610f2, #007bff);
     }
   }
 `;
@@ -130,10 +130,10 @@ const CTASection = styled.section`
     border-radius: 5px;
     cursor: pointer;
     font-size: 1rem;
-    transition: background 0.3s;
 
+    transition: 0.3s ease;
     &:hover {
-      background: #218838;
+      transform: translateY(-3px);
     }
   }
 `;
@@ -159,7 +159,7 @@ const ProjectPage = () => {
             alt="Project 1"
             loading="eager"
           />
-          <h3>Clean Water Initiative</h3>
+          <h3>Shoebox of Love</h3>
           <p>Providing access to clean and safe drinking water.</p>
           <div className="progress-bar">
             <div className="progress"></div>
@@ -171,11 +171,11 @@ const ProjectPage = () => {
 
         <ProjectCard>
           <img
-            src="https://res.cloudinary.com/dbcygr0pi/image/upload/v1737386722/vecteezy_hope-for-brighter-future_29313497_yrw5b5.jpg"
+            src="https://res.cloudinary.com/dbcygr0pi/image/upload/v1739255657/img13_mkvayy.jpg"
             alt="Project 2"
             loading="eager"
           />
-          <h3>Education for All</h3>
+          <h3>Book Bags and School Supplies</h3>
           <p>Empowering children with access to quality education.</p>
           <div className="progress-bar">
             <div className="progress"></div>
@@ -191,7 +191,7 @@ const ProjectPage = () => {
             alt="Project 3"
             loading="eager"
           />
-          <h3>Healthcare Access</h3>
+          <h3>Feminine Hygiene Packs</h3>
           <p>Bringing medical aid to underserved regions.</p>
           <div className="progress-bar">
             <div className="progress"></div>

@@ -5,17 +5,16 @@ import CountUp from "../articles/CountUp";
 import ProjectPage from "../articles/ProjectPage";
 import ContactPage from "../articles/ContactForm";
 import Map from "../articles/Map";
-import CommitteePage from "../articles/Commitee";
-import Committee from "../articles/CommiteePage";
+import Fundraising from "../articles/Fundraising";
 
 const Home = () => {
   return (
     <div>
       <Banner />
-      {/* <Committee /> */}
       <About />
       <CountUp />
       <ProjectPage />
+      <Fundraising />
       <ContactPage />
       <Map />
     </div>
