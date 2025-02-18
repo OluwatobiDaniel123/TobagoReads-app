@@ -12,12 +12,13 @@ export const sendMessage = async (req, res) => {
     let botResponse = "";
     let options = [];
     let paymentLink = null;
+    let Amount = ["$5", "$10", "$20"];
 
     if (message.toLowerCase().includes("donate")) {
       botResponse =
         "Thank you for your generosity! How much would you like to donate?";
       options = ["$5", "$10", "$20", "Custom Amount"];
-    } else if (["$5", "$10", "$20"].includes(message)) {
+    } else if (Amount.includes(message)) {
       botResponse = `Great! You selected ${message}. How would you like to pay?`;
       options = ["Credit Card", "PayPal", "Bank Transfer"];
     } else if (message.toLowerCase().includes("custom amount")) {

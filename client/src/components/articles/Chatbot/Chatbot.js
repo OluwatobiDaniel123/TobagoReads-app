@@ -153,7 +153,7 @@ const Chatbot = () => {
 
     try {
       const response = await axios.post(
-        "https://tobago-reads-app-server.vercel.app",
+        "https://tobago-reads-app-server.vercel.app/api/chat",
         {
           message: userInput,
         }
