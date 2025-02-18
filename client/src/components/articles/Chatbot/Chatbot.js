@@ -184,7 +184,7 @@ const Chatbot = () => {
       </Avatar>
       <ChatContainer isVisible={isVisible}>
         <Header>
-          <span>Chatbot</span>
+          <span>Chat</span>
           <ClearButton onClick={clearMessages}>
             <FiX />
           </ClearButton>

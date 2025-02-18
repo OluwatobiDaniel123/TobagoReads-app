@@ -134,6 +134,9 @@ const TeamMember = styled.div`
   text-align: center;
   max-width: 200px;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   img {
     border-radius: 50%;
@@ -315,6 +318,9 @@ const ServiceCard = styled.div`
   padding: 20px;
   width: 300px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease;
 

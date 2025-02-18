@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 
 const PageWrapper = styled.div`
   font-family: Arial, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  // padding: 1rem;
 `;
 
 const HeroSection = styled.section`
@@ -14,17 +17,15 @@ const HeroSection = styled.section`
   padding: 80px 20px;
 
   @media (max-width: 768px) {
-    padding: 40px 10px;
+    padding: 20px 0;
   }
 `;
 
 const HeroText = styled.div`
   h1 {
     font-size: 2.5rem;
+    font-weight: bold;
     margin-bottom: 20px;
-    background: linear-gradient(90deg, #00d4ff, #007bff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
   }
 
   p {
@@ -64,9 +65,13 @@ const ProjectCard = styled.div`
   padding: 20px;
 
   img {
-    width: 100%;
-    height: 200px;
+    border-radius: 8px;
     object-fit: cover;
+    transition: 0.3s transform;
+
+    &:hover {
+      transform: scale(1.02);
+    }
   }
 
   h3 {

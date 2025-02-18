@@ -19,10 +19,15 @@ const fadeIn = keyframes`
   }
 `;
 
-const HighlightsSection = styled.section`
-  padding: 80px 40px;
-  text-align: center;
+const Div = styled.div`
   background: linear-gradient(135deg, #1e3c72, #2a5298);
+`;
+
+const HighlightsSection = styled.section`
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
   color: #ffffff;
   animation: ${fadeIn} 1s ease-in-out;
 
@@ -82,6 +87,9 @@ const HighlightCard = styled.div`
   overflow: hidden;
   padding: 30px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 
@@ -141,6 +149,9 @@ const HighlightCard3 = styled.div`
   overflow: hidden;
   padding: 30px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 
@@ -200,6 +211,9 @@ const HighlightCard1 = styled.div`
   overflow: hidden;
   padding: 30px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 
@@ -259,6 +273,9 @@ const HighlightCard4 = styled.div`
   overflow: hidden;
   padding: 30px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 
@@ -347,59 +364,61 @@ const Divider = styled.div`
 
 const CompanyHighlights = () => {
   return (
-    <HighlightsSection>
-      <HeaderWrapper>
-        <h1>Our Impact</h1>
-        <Divider />
-        <h2>Empowering Communities and Changing Lives</h2>
-      </HeaderWrapper>
-      <HighlightsGrid>
-        <HighlightCard>
-          <IconWrapper>
-            <FaHandsHelping />
-          </IconWrapper>
-          <HighlightContent>
-            <h3>
-              <CountUp end={1000000} />+
-            </h3>
-            <p>Donations Received</p>
-          </HighlightContent>
-        </HighlightCard>
-        <HighlightCard1>
-          <IconWrapper>
-            <FaHeart style={{ color: "red" }} />
-          </IconWrapper>
-          <HighlightContent>
-            <h3>
-              <CountUp end={5000} />+
-            </h3>
-            <p>Lives Changed</p>
-          </HighlightContent>
-        </HighlightCard1>
-        <HighlightCard3>
-          <IconWrapper>
-            <FaChartLine style={{ color: "#00BCD4" }} />
-          </IconWrapper>
-          <HighlightContent>
-            <h3>
-              <CountUp end={150} />+
-            </h3>
-            <p>Projects Completed</p>
-          </HighlightContent>
-        </HighlightCard3>
-        <HighlightCard4>
-          <IconWrapper>
-            <FaGlobeAfrica style={{ color: "blue" }} />
-          </IconWrapper>
-          <HighlightContent>
-            <h3>
-              <CountUp end={20} />+
-            </h3>
-            <p>Countries Served</p>
-          </HighlightContent>
-        </HighlightCard4>
-      </HighlightsGrid>
-    </HighlightsSection>
+    <Div>
+      <HighlightsSection>
+        <HeaderWrapper>
+          <h1>Our Impact</h1>
+          <Divider />
+          <h2>Empowering Communities and Changing Lives</h2>
+        </HeaderWrapper>
+        <HighlightsGrid>
+          <HighlightCard>
+            <IconWrapper>
+              <FaHandsHelping />
+            </IconWrapper>
+            <HighlightContent>
+              <h3>
+                <CountUp end={1000000} />+
+              </h3>
+              <p>Donations Received</p>
+            </HighlightContent>
+          </HighlightCard>
+          <HighlightCard1>
+            <IconWrapper>
+              <FaHeart style={{ color: "red" }} />
+            </IconWrapper>
+            <HighlightContent>
+              <h3>
+                <CountUp end={5000} />+
+              </h3>
+              <p>Lives Changed</p>
+            </HighlightContent>
+          </HighlightCard1>
+          <HighlightCard3>
+            <IconWrapper>
+              <FaChartLine style={{ color: "#00BCD4" }} />
+            </IconWrapper>
+            <HighlightContent>
+              <h3>
+                <CountUp end={150} />+
+              </h3>
+              <p>Projects Completed</p>
+            </HighlightContent>
+          </HighlightCard3>
+          <HighlightCard4>
+            <IconWrapper>
+              <FaGlobeAfrica style={{ color: "blue" }} />
+            </IconWrapper>
+            <HighlightContent>
+              <h3>
+                <CountUp end={20} />+
+              </h3>
+              <p>Countries Served</p>
+            </HighlightContent>
+          </HighlightCard4>
+        </HighlightsGrid>
+      </HighlightsSection>
+    </Div>
   );
 };
 
