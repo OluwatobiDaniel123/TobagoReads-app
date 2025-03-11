@@ -1,5 +1,6 @@
 import React from "react";
 import "./Commitee.css";
+import styled from "styled-components";
 
 const CommitteePage = () => {
   const otherMembers = [
@@ -8,62 +9,89 @@ const CommitteePage = () => {
       role: "Committee Member",
       contribution: "Educational Programs",
       contact: "dexter.e@tobagoreads.org",
+      Image:
+        "https://res.cloudinary.com/dbcygr0pi/image/upload/v1741716312/IMG-20250311-WA0025_hyieli.jpg",
     },
     {
       name: "Elizabeth James",
       role: "Program Coordinator",
       contribution: "Youth Development",
       contact: "elizabeth.j@tobagoreads.org",
+      Image:
+        "https://res.cloudinary.com/dbcygr0pi/image/upload/v1741418057/Screenshot_2025-03-08_081014_nvnzth.png",
     },
     {
       name: "Ed Osbourne",
       role: "Committee Member",
       contribution: "Community Outreach",
       contact: "ed.o@tobagoreads.org",
+      Image:
+        "https://res.cloudinary.com/dbcygr0pi/image/upload/v1741418057/Screenshot_2025-03-08_081014_nvnzth.png",
     },
     {
       name: "Harriet George",
       role: "Events Coordinator",
       contribution: "Cultural Programs",
       contact: "harriet.g@tobagoreads.org",
+      Image:
+        "https://res.cloudinary.com/dbcygr0pi/image/upload/v1741418057/Screenshot_2025-03-08_081014_nvnzth.png",
     },
     {
       name: "Catreena Holliday",
       role: "Committee Member",
       contribution: "Literacy Programs",
       contact: "catreena.h@tobagoreads.org",
+      Image:
+        "https://res.cloudinary.com/dbcygr0pi/image/upload/v1741418057/Screenshot_2025-03-08_081014_nvnzth.png",
     },
     {
       name: "Deslyn Erahbor",
       role: "Resource Coordinator",
       contribution: "Educational Resources",
       contact: "deslyn.e@tobagoreads.org",
+      Image:
+        "https://res.cloudinary.com/dbcygr0pi/image/upload/v1741418057/Screenshot_2025-03-08_081014_nvnzth.png",
     },
     {
       name: "Abigail Joseph",
       role: "Committee Member",
       contribution: "Youth Mentorship",
       contact: "abigail.j@tobagoreads.org",
+      Image:
+        "https://res.cloudinary.com/dbcygr0pi/image/upload/v1741716312/IMG-20250311-WA0026_v1stcn.jpg",
     },
     {
       name: "Ailene Stanislaus",
       role: "Program Developer",
       contribution: "Reading Initiatives",
       contact: "ailene.s@tobagoreads.org",
+      Image:
+        "https://res.cloudinary.com/dbcygr0pi/image/upload/v1741418057/Screenshot_2025-03-08_081014_nvnzth.png",
     },
     {
       name: "Milton Eastman",
       role: "Committee Member",
       contribution: "Community Relations",
       contact: "milton.e@tobagoreads.org",
+      Image:
+        "https://res.cloudinary.com/dbcygr0pi/image/upload/v1741418057/Screenshot_2025-03-08_081014_nvnzth.png",
     },
     {
       name: "Trevor Denoon",
       role: "Project Coordinator",
       contribution: "Educational Events",
       contact: "trevor.d@tobagoreads.org",
+      Image:
+        "https://res.cloudinary.com/dbcygr0pi/image/upload/v1741418057/Screenshot_2025-03-08_081014_nvnzth.png",
     },
   ];
+
+  const Img = styled.img`
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+  `;
 
   return (
     <div className="committee-container">
@@ -143,6 +171,7 @@ const CommitteePage = () => {
             {otherMembers.map((member, index) => (
               <div key={index} className="member-card">
                 <div className="member-card-front">
+                  <Img src={member.Image} alt={member.name} />
                   <div className="member-name">{member.name}</div>
                   <div className="member-role">{member.role}</div>
                 </div>

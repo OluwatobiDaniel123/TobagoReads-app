@@ -94,8 +94,7 @@ const Footer = () => {
           </FooterHeader>
           <FooterHeader>United States</FooterHeader>
           <FooterText>
-            2300 Camp Oando nowway, Cof 143 #1008 dollins Park, GA 34537, United
-            States
+            1223 East 48th Street, Brooklyn, NY 11234, United States{" "}
           </FooterText>
           <FooterText> +1 (917) 836 7151</FooterText>
         </FooterSection>

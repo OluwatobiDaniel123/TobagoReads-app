@@ -5,14 +5,14 @@
 .committee-div {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  /* padding: 2rem; */
 }
 
 .committee-title {
   /* text-align: center; */
   color: #ffffff;
   font-size: 2.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: bold;
@@ -23,7 +23,7 @@
   color: #ffffff;
 
   font-size: 2rem;
-  margin-bottom: 3rem;
+  margin-bottom: 0.5rem;
 }
 
 /* Animations */

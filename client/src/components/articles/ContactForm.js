@@ -67,8 +67,8 @@ const ContactPage = () => {
               <strong>Email:</strong> tobagoreads@yahoo.com
             </p>
             <p>
-              <strong>Office Address:</strong> 2300 Camp Oando nowway, Cof 143
-              #1008 dollins Park, GA 34537, United States
+              <strong>Office Address:</strong> 1223 East 48th Street, Brooklyn,
+              NY 11234, United States
             </p>
           </Detail>
 

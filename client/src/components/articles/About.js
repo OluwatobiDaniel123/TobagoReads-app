@@ -90,27 +90,19 @@ const About = () => {
           <TeamSection>
             <TeamMember>
               <img
-                src="https://res.cloudinary.com/dbcygr0pi/image/upload/v1736774363/WhatsApp_Image_2025-01-10_at_17.55-Photoroom_tafyqg.jpg"
+                src="https://res.cloudinary.com/dbcygr0pi/image/upload/v1741725412/IMG-20250311-WA0037_ffpae3.jpg"
                 alt="Team Member"
               />
               <h4>Helianne Duke</h4>
-              <p>Committee member's</p>
+              <p>Founder</p>
             </TeamMember>
             <TeamMember>
               <img
-                src="https://res.cloudinary.com/dbcygr0pi/image/upload/v1736774363/WhatsApp_Image_2025-01-10_at_17.55-Photoroom_tafyqg.jpg"
+                src="https://res.cloudinary.com/dbcygr0pi/image/upload/v1741725412/IMG-20250311-WA0038_lpwcp3.jpg"
                 alt="Team Member"
               />
-              <h4>Elizabeth James</h4>
-              <p>Committee member's</p>
-            </TeamMember>
-            <TeamMember>
-              <img
-                src="https://res.cloudinary.com/dbcygr0pi/image/upload/v1736774363/WhatsApp_Image_2025-01-10_at_17.55-Photoroom_tafyqg.jpg"
-                alt="Team Member"
-              />
-              <h4>Catreena Holliday</h4>
-              <p>Committee member's</p>
+              <h4>Clive Duke</h4>
+              <p>Co-Founder</p>
             </TeamMember>
           </TeamSection>
           <CTA to="/commitee">See more</CTA>
@@ -132,7 +124,7 @@ const TeamSection = styled.div`
 
 const TeamMember = styled.div`
   text-align: center;
-  max-width: 200px;
+  max-width: 300px;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -140,8 +132,8 @@ const TeamMember = styled.div`
 
   img {
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     object-fit: cover;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;

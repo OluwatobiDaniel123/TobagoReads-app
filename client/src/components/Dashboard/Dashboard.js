@@ -45,12 +45,12 @@ const CustomCardTitle = ({ children, className = "" }) => (
 const Sidebar = ({ isOpen, toggleSidebar }) => (
   <div
     className={`fixed left-0 top-0 h-full bg-gray-900 text-white transition-all duration-300 ${
-      isOpen ? "w-64" : "w-0"
+      isOpen ? "w-72" : "w-0"
     } overflow-hidden z-50`}
   >
     <div className="p-4">
       <div className="flex justify-between items-center mb-8">
-        <h2 className="text-xl font-bold">Charity Admin</h2>
+        <h2 className="text-xl font-bold">Tobago Admin</h2>
         <button
           onClick={toggleSidebar}
           className="lg:hidden text-white hover:text-gray-300"
@@ -306,7 +306,7 @@ const Dashboard = () => {
           sidebarOpen ? "lg:ml-64" : "ml-0"
         }`}
       >
-        <div className="p-6">
+        <div className="p-2">
           <div className="flex justify-between items-center mb-6">
             <div className="flex items-center space-x-4">
               <button
@@ -315,7 +315,7 @@ const Dashboard = () => {
               >
                 <Menu className="h-6 w-6" />
               </button>
-              <h1 className="text-2xl font-bold text-gray-900 ">
+              <h1 className="text-2xl font-bold text-gray-900 hidden md:block ">
                 Charity Dashboard
               </h1>
             </div>

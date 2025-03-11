@@ -8,7 +8,7 @@ const Map = () => {
     {
       id: "trinidad",
       name: "Trinidad & Tobago",
-      url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8056204.547269618!2d-61.261684625067005!3d10.69180328704151!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c360856cc972c85%3A0xe7229e2993f2927e!2sTrinidad%20and%20Tobago!5e0!3m2!1sen!2sng!4v1738830453821!5m2!1sen!2sng",
+      url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15648.612907173578!2d-60.559902283683066!3d11.323508861952199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c48f8505b35b25f%3A0xae83ceb0ca85f0d1!2sCharlotteville%2C%20Trinidad%20and%20Tobago!5e0!3m2!1sen!2sng!4v1740265867141!5m2!1sen!2sng",
     },
     {
       id: "jamaica",
@@ -18,12 +18,12 @@ const Map = () => {
     {
       id: "nigeria",
       name: "Nigeria",
-      url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15904208.406374084!2d2.676932103049628!3d9.082039024358467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104c7b8c5c3e1b1f%3A0x4732a02f39a1a00c!2sNigeria!5e0!3m2!1sen!2sng!4v1738830453821!5m2!1sen!2sng",
+      url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d253682.4631036623!2d3.1191382840761523!3d6.548369378878717!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8b2ae68280c1%3A0xdc9e87a367c3d9cb!2sLagos!5e0!3m2!1sen!2sng!4v1740266005394!5m2!1sen!2sng",
     },
     {
       id: "newyork",
       name: "New York",
-      url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.05067748396!2d-74.3091773393739!3d40.69719333811824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sng!4v1738830453821!5m2!1sen!2sng",
+      url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193747.0318804858!2d-74.10965091884208!3d40.64537482137494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24416947c2109%3A0x82765c7404007886!2sBrooklyn%2C%20NY%2C%20USA!5e0!3m2!1sen!2sng!4v1740266426914!5m2!1sen!2sng",
     },
     {
       id: "india",

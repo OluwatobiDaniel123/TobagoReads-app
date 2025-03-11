@@ -178,6 +178,7 @@ const Chatbot = () => {
 
   const clearMessages = () => {
     setMessages([]);
+    setIsVisible(false);
   };
 
   return (

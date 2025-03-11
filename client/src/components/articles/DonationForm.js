@@ -1,124 +1,110 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import PaystackPop from "@paystack/inline-js";
+import QRCode from "react-qr-code";
 
-const DonateContainer = styled.div`
+const Container = styled.div`
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  text-align: center;
-  padding: 60px 30px;
-  // background: url("https://res.cloudinary.com/dbcygr0pi/image/upload/v1737382927/vecteezy_woman-holding-red-heart-love-health-insurance-donation_16652611_njmc2u.jpg")
-  //   no-repeat center center;
-  // background-size: cover;
+  justify-content: center;
   background: linear-gradient(135deg, #1e3c72, #2a5298);
-s
-  color: #fff;
-`;
-const FormContainer = styled.div`
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 20px;
-  background: linear-gradient(135deg, #e3f2fd, #ffffff);
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  text-align: center;
+  padding: 15px;
 `;
 
-const Title = styled.h2`
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-  color: #007bff;
+const Card = styled.div`
+  background: #fff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  max-width: 600px;
+  width: 100%;
+`;
+
+const Title = styled.h1`
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #1e3c72;
+  text-align: center;
 `;
 
 const Subtitle = styled.p`
   font-size: 1.1rem;
-  margin-bottom: 30px;
   color: #555;
+  text-align: center;
+  margin-bottom: 30px;
 `;
 
-const InputGroup = styled.div`
-  margin-bottom: 20px;
-  text-align: left;
-
-  label {
-    display: block;
-    margin-bottom: 8px;
-    font-size: 1rem;
-    color: #333;
-  }
-
-  input,
-  select {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
-    color: #333;
-    background-color: #f9f9f9;
-
-    &:focus {
-      outline: none;
-      border-color: #007bff;
-      box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
-    }
-  }
-`;
-
-const RadioGroup = styled.div`
-  margin-bottom: 20px;
-  text-align: left;
-
-  label {
-    font-size: 1rem;
-    color: #555;
-    margin-right: 20px;
-    cursor: pointer;
-
-    input {
-      margin-right: 10px;
-    }
-  }
-`;
-
-const DonateButton = styled.button`
-  background-color: #007bff;
-  color: #fff;
-  padding: 15px 20px;
-  border: none;
-  border-radius: 50px;
-  font-size: 1.2rem;
-  cursor: pointer;
-  text-transform: uppercase;
+const Input = styled.input`
   width: 100%;
-  font-weight: bold;
-  transition: all 0.3s ease;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+`;
 
+const Select = styled.select`
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+`;
+
+const PaymentButton = styled.button`
+  width: 100%;
+  padding: 15px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 8px;
+  background: #1e3c72;
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
   &:hover {
-    background-color: #0056b3;
-    box-shadow: 0 4px 15px rgba(0, 91, 187, 0.3);
+    background: #2a5298;
   }
 `;
 
-const SuccessMessage = styled.div`
-  margin-top: 20px;
-  padding: 15px;
-  background-color: #d4edda;
-  color: #155724;
-  border: 1px solid #c3e6cb;
-  border-radius: 5px;
-  font-size: 1rem;
-  font-weight: bold;
+const QRCodeSection = styled.div`
+  margin-top: 40px;
+  padding: 20px;
+  background: #fff;
+  color: black;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+`;
+
+const OtherPayments = styled.div`
+  margin-top: 30px;
+  text-align: center;
+
+  h3 {
+    margin-bottom: 10px;
+    color: #1e3c72;
+  }
+
+  p {
+    margin: 5px 0;
+    font-weight: bold;
+  }
 `;
 
 const DonationForm = () => {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
-    amount: "25",
-    frequency: "One-Time",
+    amount: "50",
   });
-
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleChange = (e) => {
@@ -126,109 +112,74 @@ const DonationForm = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handlePaystack = (e) => {
     e.preventDefault();
     const paystack = new PaystackPop();
-
     paystack.newTransaction({
       key: "pk_test_39c77ec63722966d5894708cc17252166da01be9",
       amount: formData.amount * 100,
       name: formData.fullName,
       email: formData.email,
-
-      onSuccess(transaction) {
+      onSuccess: (transaction) => {
         console.log(transaction);
         setIsSubmitted(true);
-
-        setFormData({ amount: "", fullName: "", email: "" });
+        setFormData({ fullName: "", email: "", amount: "" });
       },
-
-      onCancel() {
-        console.log("You canceled the transaction.");
+      onCancel: () => {
+        console.log("Transaction cancelled");
       },
     });
   };
 
   return (
-    <DonateContainer>
-      <FormContainer>
-        <Title>Donate Now</Title>
+    <Container>
+      <Card>
+        <Title>Donate Now!!</Title>
         <Subtitle>
           Your generosity makes a difference in someone's life.
         </Subtitle>
-        <form onSubmit={handleSubmit}>
-          <InputGroup>
-            <label htmlFor="fullName">Full Name</label>
-            <input
-              type="text"
-              id="fullName"
-              name="fullName"
-              value={formData.fullName}
-              onChange={handleChange}
-              placeholder="Enter your full name"
-              required
-            />
-          </InputGroup>
-          <InputGroup>
-            <label htmlFor="email">Email Address</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="Enter your email"
-              required
-            />
-          </InputGroup>
-          <InputGroup>
-            <label htmlFor="amount">Donation Amount</label>
-            <select
-              id="amount"
-              name="amount"
-              value={formData.amount}
-              onChange={handleChange}
-            >
-              <option value="10">$10</option>
-              <option value="25">$25</option>
-              <option value="50">$50</option>
-              <option value="100">$100</option>
-              <option value="250">$250</option>
-              <option value="500">$500</option>
-            </select>
-          </InputGroup>
-          <RadioGroup>
-            <label>
-              <input
-                type="radio"
-                name="frequency"
-                value="One-Time"
-                checked={formData.frequency === "One-Time"}
-                onChange={handleChange}
-              />
-              One-Time
-            </label>
-            <label>
-              <input
-                type="radio"
-                name="frequency"
-                value="Monthly"
-                checked={formData.frequency === "Monthly"}
-                onChange={handleChange}
-              />
-              Monthly
-            </label>
-          </RadioGroup>
-          <DonateButton type="submit">Donate</DonateButton>
+        <form onSubmit={handlePaystack}>
+          <Input
+            type="text"
+            placeholder="Full Name"
+            name="fullName"
+            value={formData.fullName}
+            onChange={handleChange}
+            required
+          />
+          <Input
+            type="email"
+            placeholder="Email Address"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+          <Select name="amount" value={formData.amount} onChange={handleChange}>
+            <option value="10">$10</option>
+            <option value="25">$25</option>
+            <option value="50">$50</option>
+            <option value="100">$100</option>
+            <option value="250">$250</option>
+            <option value="500">$500</option>
+          </Select>
+          <PaymentButton type="submit">Pay with Paystack</PaymentButton>
         </form>
-        {isSubmitted && (
-          <SuccessMessage>
-            Thank you, {formData.fullName}, for your donation of $
-            {formData.amount}!
-          </SuccessMessage>
-        )}
-      </FormContainer>
-    </DonateContainer>
+        {isSubmitted && <p>Thank you for your generous donation!</p>}
+      </Card>
+      <QRCodeSection>
+        <OtherPayments>
+          <h3>Other Payment Methods</h3>
+          <p>🏦 Zelle: alphacitem@msm.com</p>
+        </OtherPayments>
+        <h3>Donate via CashApp</h3>
+        <QRCode value="https://cash.app/$HelianneDuke" size={150} />
+        <p>
+          Scan this QR code or use 💵 CashApp: <strong>$HelianneDuke</strong>
+        </p>
+      </QRCodeSection>
+      ;
+    </Container>
   );
 };
 
