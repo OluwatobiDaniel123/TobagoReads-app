@@ -34,7 +34,7 @@ const CommitteePage = () => {
       contribution: "Cultural Programs",
       contact: "harriet.g@tobagoreads.org",
       Image:
-        "https://res.cloudinary.com/dbcygr0pi/image/upload/v1741418057/Screenshot_2025-03-08_081014_nvnzth.png",
+        "https://res.cloudinary.com/dbcygr0pi/image/upload/v1741716312/IMG-20250311-WA0025_hyieli.jpg",
     },
     {
       name: "Catreena Holliday",
@@ -42,15 +42,16 @@ const CommitteePage = () => {
       contribution: "Literacy Programs",
       contact: "catreena.h@tobagoreads.org",
       Image:
-        "https://res.cloudinary.com/dbcygr0pi/image/upload/v1741716312/IMG-20250311-WA0025_hyieli.jpg",
+        "https://res.cloudinary.com/dbcygr0pi/image/upload/v1741725412/IMG-20250311-WA0038_lpwcp3.jpg",
     },
     {
       name: "Deslyn Erahbor",
       role: "Resource Coordinator",
       contribution: "Educational Resources",
       contact: "deslyn.e@tobagoreads.org",
+
       Image:
-        "https://res.cloudinary.com/dbcygr0pi/image/upload/v1741725412/IMG-20250311-WA0038_lpwcp3.jpg",
+        "https://res.cloudinary.com/dbcygr0pi/image/upload/v1741418057/Screenshot_2025-03-08_081014_nvnzth.png",
     },
     {
       name: "Abigail Joseph",

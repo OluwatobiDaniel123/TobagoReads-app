@@ -316,9 +316,9 @@ const Header = () => {
               )}
             </NavItem>
           ))}
-          <Link to="/Donate">
+          {/* <Link to="/Donate">
             <QuoteButton>Donate Now</QuoteButton>
-          </Link>
+          </Link> */}
         </HeaderUl>
 
         <NavIcon onClick={toggleNav}>

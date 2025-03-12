@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import Banner from "../articles/Banner";
 
 const PageWrapper = styled.div`
   font-family: Arial, sans-serif;
@@ -146,7 +147,7 @@ const CTASection = styled.section`
 const ProjectPage = () => {
   return (
     <PageWrapper>
-      <HeroSection>
+      {/* <HeroSection>
         <HeroText>
           <h1>Empowering Lives Through Impactful Projects</h1>
           <p>
@@ -155,8 +156,8 @@ const ProjectPage = () => {
           </p>
           <button>See All Projects</button>
         </HeroText>
-      </HeroSection>
-
+      </HeroSection> */}
+      <Banner />
       <ProjectsGrid>
         <ProjectCard>
           <img

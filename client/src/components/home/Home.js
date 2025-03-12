@@ -1,6 +1,6 @@
 import React from "react";
 import About from "../articles/About";
-import Banner from "../articles/Banner";
+import Banner2 from "../articles/Banner2";
 import CountUp from "../articles/CountUp";
 import ProjectPage from "../articles/ProjectPage";
 import ContactPage from "../articles/ContactForm";
@@ -10,7 +10,7 @@ import Fundraising from "../articles/Fundraising";
 const Home = () => {
   return (
     <div>
-      <Banner />
+      <Banner2 />
       <About />
       <CountUp />
       <ProjectPage />

@@ -34,7 +34,7 @@ const gradientShift = keyframes`
 
 const Image = styled.img`
   width: 100%;
-  height: 100%;
+  height: 100vh;
   object-fit: cover;
   position: absolute;
   top: 0;
@@ -137,51 +137,20 @@ const CallToAction = styled(Link)`
   }
 `;
 
-const textContent = [
-  {
-    heading: "Join Hands to Make a Difference",
-    subtext: "Every small contribution creates a big impact.",
-    LinkText: "Donate Now",
-    link: "/Donate",
-    image:
-      "https://res.cloudinary.com/dbcygr0pi/image/upload/v1737372290/vecteezy_high-five-team-work-as-a-team-together-air-hands-bless-the_7102916_rq4bux.jpg",
-  },
-  {
-    heading: "We’re Here to Help",
-    subtext: "Reach out to learn how you can contribute or get support.",
-    LinkText: "Contact Us",
-    link: "/Contact",
-    image:
-      "https://res.cloudinary.com/dbcygr0pi/image/upload/v1737372285/vecteezy_silhouette-of-hands-on-sunset-background-help-concept-hope_14000939_zwqjjc.jpg",
-  },
-  {
-    heading: "Discover Our Projects",
-    subtext: "Explore the lives we’ve touched and how we bring hope.",
-    LinkText: "Explore More",
-    link: "/explore",
-    image:
-      "https://res.cloudinary.com/dbcygr0pi/image/upload/v1739256701/img15_amdguq.jpg",
-  },
-];
-
-const Fade = () => {
+const Banner2 = () => {
   return (
-    <div className="slider-container">
-      <Slider {...settings}>
-        {textContent.map((item, index) => (
-          <Slide key={index}>
-            <Image src={item.image} alt={`Slide ${index + 1}`} />
-            <Overlay />
-            <TextContainer>
-              <GradientText>{item.heading}</GradientText>
-              <SubText>{item.subtext}</SubText>
-              <CallToAction to={item.link}>{item.LinkText}</CallToAction>
-            </TextContainer>
-          </Slide>
-        ))}
-      </Slider>
+    <div style={{ height: "100vh" }} className="slider-container">
+      <Slide>
+        <Image src="https://res.cloudinary.com/dbcygr0pi/image/upload/v1738155731/img8_kt83iz.jpg" />
+        <Overlay />
+        <TextContainer>
+          <GradientText>Join Hands to Make a Difference</GradientText>
+          <SubText>Every small contribution creates a big impact.</SubText>
+          <CallToAction to="/donate">Donate Now</CallToAction>
+        </TextContainer>
+      </Slide>
     </div>
   );
 };
 
-export default Fade;
+export default Banner2;

@@ -374,7 +374,7 @@ const CompanyHighlights = () => {
         <HighlightsGrid>
           <HighlightCard>
             <IconWrapper>
-              <FaHandsHelping />
+              <FaHandsHelping style={{ color: "#facc15" }} />
             </IconWrapper>
             <HighlightContent>
               <h3>
@@ -385,7 +385,7 @@ const CompanyHighlights = () => {
           </HighlightCard>
           <HighlightCard1>
             <IconWrapper>
-              <FaHeart style={{ color: "red" }} />
+              <FaHeart style={{ color: "#ef4444" }} />
             </IconWrapper>
             <HighlightContent>
               <h3>
@@ -396,7 +396,7 @@ const CompanyHighlights = () => {
           </HighlightCard1>
           <HighlightCard3>
             <IconWrapper>
-              <FaChartLine style={{ color: "#00BCD4" }} />
+              <FaChartLine style={{ color: "#22c55e" }} />
             </IconWrapper>
             <HighlightContent>
               <h3>
@@ -407,7 +407,7 @@ const CompanyHighlights = () => {
           </HighlightCard3>
           <HighlightCard4>
             <IconWrapper>
-              <FaGlobeAfrica style={{ color: "blue" }} />
+              <FaGlobeAfrica style={{ color: "#3b82f6" }} />
             </IconWrapper>
             <HighlightContent>
               <h3>
