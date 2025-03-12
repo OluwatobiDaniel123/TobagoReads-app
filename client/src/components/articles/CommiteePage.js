@@ -10,7 +10,7 @@ const CommitteePage = () => {
       contribution: "Educational Programs",
       contact: "dexter.e@tobagoreads.org",
       Image:
-        "https://res.cloudinary.com/dbcygr0pi/image/upload/v1741716312/IMG-20250311-WA0025_hyieli.jpg",
+        "https://res.cloudinary.com/dbcygr0pi/image/upload/v1741418057/Screenshot_2025-03-08_081014_nvnzth.png",
     },
     {
       name: "Elizabeth James",
@@ -42,7 +42,7 @@ const CommitteePage = () => {
       contribution: "Literacy Programs",
       contact: "catreena.h@tobagoreads.org",
       Image:
-        "https://res.cloudinary.com/dbcygr0pi/image/upload/v1741418057/Screenshot_2025-03-08_081014_nvnzth.png",
+        "https://res.cloudinary.com/dbcygr0pi/image/upload/v1741716312/IMG-20250311-WA0025_hyieli.jpg",
     },
     {
       name: "Deslyn Erahbor",
@@ -50,7 +50,7 @@ const CommitteePage = () => {
       contribution: "Educational Resources",
       contact: "deslyn.e@tobagoreads.org",
       Image:
-        "https://res.cloudinary.com/dbcygr0pi/image/upload/v1741418057/Screenshot_2025-03-08_081014_nvnzth.png",
+        "https://res.cloudinary.com/dbcygr0pi/image/upload/v1741725412/IMG-20250311-WA0038_lpwcp3.jpg",
     },
     {
       name: "Abigail Joseph",
@@ -91,6 +91,11 @@ const CommitteePage = () => {
     width: 100px;
     height: 100px;
     object-fit: cover;
+
+    @media (max-width: 768px) {
+      width: 70px;
+      height: 70px;
+    }
   `;
 
   return (
@@ -172,8 +177,8 @@ const CommitteePage = () => {
               <div key={index} className="member-card">
                 <div className="member-card-front">
                   <Img src={member.Image} alt={member.name} />
-                  <div className="member-name">{member.name}</div>
-                  <div className="member-role">{member.role}</div>
+                  <p className="member-name">{member.name}</p>
+                  <p className="member-role">{member.role}</p>
                 </div>
                 <div className="member-card-back">
                   <h3>Contact</h3>

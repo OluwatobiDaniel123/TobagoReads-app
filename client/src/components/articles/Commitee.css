@@ -119,7 +119,7 @@
 .member-card .member-name {
   font-size: 1.3rem;
   font-weight: bold;
-  margin-bottom: 0.5rem;
+  /* margin-bottom: 0.5rem; */
 }
 
 .member-card .member-role {
@@ -169,11 +169,11 @@
   }
 
   .member-card .member-name {
-    font-size: 1.1rem;
+    font-size: 0.8rem;
   }
 
   .member-card .member-role {
-    font-size: 0.9rem;
+    font-size: 0.5rem;
   }
 
   .member-card-back h3 {

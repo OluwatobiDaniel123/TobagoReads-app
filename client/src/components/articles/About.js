@@ -98,7 +98,7 @@ const About = () => {
             </TeamMember>
             <TeamMember>
               <img
-                src="https://res.cloudinary.com/dbcygr0pi/image/upload/v1741725412/IMG-20250311-WA0038_lpwcp3.jpg"
+                src="https://res.cloudinary.com/dbcygr0pi/image/upload/v1741418057/Screenshot_2025-03-08_081014_nvnzth.png"
                 alt="Team Member"
               />
               <h4>Clive Duke</h4>
@@ -128,12 +128,13 @@ const TeamMember = styled.div`
   padding: 20px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
 
   img {
     border-radius: 50%;
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
     object-fit: cover;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
