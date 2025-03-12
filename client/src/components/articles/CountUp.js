@@ -32,12 +32,12 @@ const HighlightsSection = styled.section`
   animation: ${fadeIn} 1s ease-in-out;
 
   @media (max-width: 768px) {
-    padding: 60px 20px;
+    padding: 50px 10px;
   }
 `;
 
 const HeaderWrapper = styled.div`
-  margin-bottom: 60px;
+  margin-bottom: 30px;
 
   h1 {
     font-size: 3rem;
@@ -344,7 +344,7 @@ const HighlightContent = styled.div`
     margin: 10px 0;
     color: #ffffff;
     @media (max-width: 768px) {
-      font-size: 2rem;
+      font-size: 1.5rem;
     }
   }
 

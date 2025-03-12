@@ -4,7 +4,7 @@ import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
 const FooterContainer = styled.footer`
   background: linear-gradient(120deg, #0d1117, #161b22);
   color: #fff;
-  padding: 40px 20px;
+  padding: 20px 5px;
   display: flex;
   flex-direction: column;
   align-items: center;

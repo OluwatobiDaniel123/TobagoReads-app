@@ -177,7 +177,7 @@ const StyledAlert = styled.div`
 const ContactSection = styled.section`
   //   background: linear-gradient(135deg, #f7f9fc, #eef2f7);
   background: linear-gradient(135deg, #1e3c72, #2a5298);
-  padding: 80px 20px;
+  padding: 50px 10px;
   color: #333;
 `;
 
@@ -186,7 +186,7 @@ const Container = styled.div`
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 30px;
 `;
 
 const Header = styled.div`
@@ -280,7 +280,7 @@ const ContactForm = styled.div`
   }
 
   @media (max-width: 7768px) {
-    padding: 20px;
+    padding: 10px;
   }
 `;
 
@@ -337,7 +337,7 @@ const QuoteSection = styled.div`
   text-align: center;
   font-style: italic;
   color: #555;
-  padding: 20px;
+  padding: 15px;
   background: #eef2f7;
   border-radius: 10px;
 `;

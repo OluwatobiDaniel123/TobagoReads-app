@@ -166,7 +166,7 @@ const TeamMember = styled.div`
 const HeroSection = styled.section`
   background: linear-gradient(120deg, #0d1117, #161b22);
   color: #f5f7fa;
-  padding: 80px 20px;
+  padding: 60px 10px;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -96,6 +96,7 @@
 @media (max-width: 768px) {
   .network-controls {
     padding: 10px;
+    margin-bottom: 0;
   }
 
   .network-btn {
