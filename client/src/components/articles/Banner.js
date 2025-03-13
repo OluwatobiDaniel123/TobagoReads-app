@@ -53,7 +53,7 @@ const Overlay = styled.div`
 
 const Slide = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 50vh;
   position: relative;
 `;
 
@@ -65,18 +65,18 @@ const TextContainer = styled.div`
   z-index: 2;
   text-align: center;
   background: rgba(0, 0, 0, 0.7);
-  padding: 2rem;
+  padding: 0.6rem;
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 
   @media (max-width: 768px) {
     width: 90%;
-    padding: 1.5rem;
+    padding: 1rem;
   }
 `;
 
 const GradientText = styled.h2`
-  font-size: 2.8rem;
+  font-size: 2rem;
   font-weight: bold;
   text-transform: uppercase;
   background: linear-gradient(45deg, #ff7e5f, #feb47b);
@@ -86,27 +86,27 @@ const GradientText = styled.h2`
   animation: ${gradientShift} 6s ease infinite, ${fadeIn} 1.5s ease-out;
 
   @media (max-width: 768px) {
-    font-size: 2rem;
+    font-size: 1rem;
   }
 `;
 
 const SubText = styled.p`
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin: 1rem 0;
   line-height: 1.6;
   color: #fff;
   animation: ${fadeIn} 1.5s ease-out;
 
   @media (max-width: 768px) {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 `;
 
 const CallToAction = styled(Link)`
   display: inline-block;
-  margin-top: 1.5rem;
-  padding: 1rem 1.8rem;
-  font-size: 1rem;
+  margin-top: 1rem;
+  padding: 0.3rem 1rem;
+  font-size: 0.9rem;
   font-weight: bold;
   text-transform: uppercase;
   color: #fff;
@@ -131,9 +131,8 @@ const CallToAction = styled(Link)`
 
   @media (max-width: 768px) {
     width: 100%;
-
-    font-size: 0.9rem;
-    padding: 0.6rem 1.5rem;
+    font-size: 0.7rem;
+    padding: 0.5rem 1rem;
   }
 `;
 

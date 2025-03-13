@@ -34,11 +34,16 @@ const gradientShift = keyframes`
 
 const Image = styled.img`
   width: 100%;
-  height: 100vh;
-  object-fit: cover;
+  height: 100%;
+  // object-fit: cover;
+  object-fit: fill;
   position: absolute;
   top: 0;
   left: 0;
+
+  @media (max-width: 768px) {
+    object-fit: cover;
+  }
 `;
 
 const Overlay = styled.div`
