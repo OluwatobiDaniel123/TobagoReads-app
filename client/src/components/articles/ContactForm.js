@@ -177,7 +177,7 @@ const StyledAlert = styled.div`
 const ContactSection = styled.section`
   //   background: linear-gradient(135deg, #f7f9fc, #eef2f7);
   background: linear-gradient(135deg, #1e3c72, #2a5298);
-  padding: 50px 10px;
+  padding: 50px 15px;
   color: #333;
 `;
 
@@ -194,11 +194,11 @@ const Header = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: bold;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   background: linear-gradient(90deg, #00d4ff, #007bff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -206,7 +206,7 @@ const Title = styled.h1`
 
 const Subtitle = styled.p`
   font-size: 1.25rem;
-  line-height: 1.8;
+  line-height: 1.3;
   color: rgba(255, 255, 255, 0.8);
   max-width: 800px;
   margin: 0 auto;
@@ -228,14 +228,13 @@ const ContactDetails = styled.div`
 const Detail = styled.div`
   flex: 1;
   h3 {
-    font-size: 1.6rem;
-    margin-bottom: 15px;
+    font-size: 1rem;
+    margin-bottom: 10px;
     color: #58a6ff;
   }
   p {
-    margin: 8px 0;
+    margin: 6px 0;
     color: rgba(255, 255, 255, 0.8);
-
     font-size: 1rem;
   }
 `;
@@ -243,7 +242,7 @@ const Detail = styled.div`
 const SocialLinks = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
 
   a {
     color: rgba(255, 255, 255, 0.8);
@@ -280,7 +279,7 @@ const ContactForm = styled.div`
   }
 
   @media (max-width: 7768px) {
-    padding: 10px;
+    padding: 8px;
   }
 `;
 

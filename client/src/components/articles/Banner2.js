@@ -53,7 +53,7 @@ const Overlay = styled.div`
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 1;
+  // z-index: 1;
 `;
 
 const Slide = styled.div`
@@ -67,7 +67,7 @@ const TextContainer = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 2;
+  // z-index: 1;
   text-align: center;
   background: rgba(0, 0, 0, 0.7);
   padding: 2rem;

@@ -174,7 +174,7 @@ const Fade = () => {
             <TextContainer>
               <GradientText>{item.heading}</GradientText>
               <SubText>{item.subtext}</SubText>
-              <CallToAction to={item.link}>{item.LinkText}</CallToAction>
+              {/* <CallToAction to={item.link}>{item.LinkText}</CallToAction> */}
             </TextContainer>
           </Slide>
         ))}
