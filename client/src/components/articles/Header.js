@@ -144,8 +144,8 @@ const SideNavItem = styled(Link)`
   border-bottom: ${(props) =>
     props.isActive ? "1px solid rgb(0, 195, 255)" : "#333"};
   text-decoration: none;
-  font-size: 18px;
-  padding: 10px 15px;
+  font-size: 16px;
+  padding: 5px 5px;
   border-radius: 5px;
   transition: all 0.3s ease;
   &:hover {
@@ -226,96 +226,98 @@ const Header = () => {
         </Link>
 
         <HeaderUl>
-          {["/", "/Projects", "/About", "/Contact"].map((path, index) => (
-            <NavItem key={index} isActive={activeNav === path}>
-              <Link to={path}>{path === "/" ? "Home" : path.slice(1)}</Link>
+          {["/", "/Projects", "/About", "/Gallery", "/Event", "/Contact"].map(
+            (path, index) => (
+              <NavItem key={index} isActive={activeNav === path}>
+                <Link to={path}>{path === "/" ? "Home" : path.slice(1)}</Link>
 
-              {path === "/Projects" && (
-                <DropdownContent>
-                  <DropdownItem to="/portfolio#projects">
-                    Shoebox of Love
-                  </DropdownItem>
-                  <DropdownItem to="/portfolio#case-studies">
-                    Adopt A Scholar
-                  </DropdownItem>
-                  <DropdownItem to="/portfolio#case-studies">
-                    Scholarships
-                  </DropdownItem>
-                  <DropdownItem to="/portfolio#case-studies">
-                    Reading Marathon
-                  </DropdownItem>
-                  <DropdownItem to="/portfolio#case-studies">
-                    Feminine Hygiene Packs
-                  </DropdownItem>
-                  <DropdownItem to="/portfolio#case-studies">
-                    Literacy Day
-                  </DropdownItem>{" "}
-                  <DropdownItem to="/portfolio#case-studies">
-                    Book Bags and School Supplies
-                  </DropdownItem>
-                </DropdownContent>
-              )}
+                {path === "/Projects" && (
+                  <DropdownContent>
+                    <DropdownItem to="/portfolio#projects">
+                      Shoebox of Love
+                    </DropdownItem>
+                    <DropdownItem to="/portfolio#case-studies">
+                      Adopt A Scholar
+                    </DropdownItem>
+                    <DropdownItem to="/portfolio#case-studies">
+                      Scholarships
+                    </DropdownItem>
+                    <DropdownItem to="/portfolio#case-studies">
+                      Reading Marathon
+                    </DropdownItem>
+                    <DropdownItem to="/portfolio#case-studies">
+                      Feminine Hygiene Packs
+                    </DropdownItem>
+                    <DropdownItem to="/portfolio#case-studies">
+                      Literacy Day
+                    </DropdownItem>{" "}
+                    <DropdownItem to="/portfolio#case-studies">
+                      Book Bags and School Supplies
+                    </DropdownItem>
+                  </DropdownContent>
+                )}
 
-              {path === "/Contact" && (
-                <DropdownContent>
-                  <Detail>
-                    <h3>Contact Information</h3>
-                    <p>
-                      <strong>Phone:</strong> +1 (917) 836-7151
-                    </p>
-                    <p>
-                      <strong>Email:</strong> tobagoreads@yahoo.com
-                    </p>
-                    <p>
-                      <strong>Office Address:</strong> 2300 Camp Oando nowway,
-                      Cof 143 #1008 dollins Park, GA 34537, United States
-                    </p>
+                {path === "/Contact" && (
+                  <DropdownContent>
+                    <Detail>
+                      <h3>Contact Information</h3>
+                      <p>
+                        <strong>Phone:</strong> +1 (917) 836-7151
+                      </p>
+                      <p>
+                        <strong>Email:</strong> tobagoreads@yahoo.com
+                      </p>
+                      <p>
+                        <strong>Office Address:</strong> 2300 Camp Oando nowway,
+                        Cof 143 #1008 dollins Park, GA 34537, United States
+                      </p>
 
-                    <span>
-                      Thank you for your generosity and commitment to our cause.
-                      Whether you have a question, want to collaborate, or
-                      simply wish to learn more, we’re here to assist you every
-                      step of the way.
-                    </span>
-                  </Detail>
+                      <span>
+                        Thank you for your generosity and commitment to our
+                        cause. Whether you have a question, want to collaborate,
+                        or simply wish to learn more, we’re here to assist you
+                        every step of the way.
+                      </span>
+                    </Detail>
 
-                  <SocialIcons>
-                    <a
-                      style={{ width: "auto" }}
-                      href="https://www.facebook.com"
-                      aria-label="Facebook"
-                    >
-                      <FaFacebook />
-                    </a>
-                    <a
-                      style={{ width: "auto" }}
-                      href="https://www.twitter.com"
-                      aria-label="Twitter"
-                    >
-                      <FaTwitter />
-                    </a>
-                    <a
-                      style={{ width: "auto" }}
-                      href="https://www.linkedin.com"
-                      aria-label="LinkedIn"
-                    >
-                      <FaLinkedin />
-                    </a>
-                    <a
-                      style={{ width: "auto" }}
-                      href="https://www.instagram.com"
-                      aria-label="Instagram"
-                    >
-                      <FaInstagram />
-                    </a>
-                    {/* <Link to="/Donate"> */}
-                    <QuoteButton>Donate Now</QuoteButton>
-                    {/* </Link> */}
-                  </SocialIcons>
-                </DropdownContent>
-              )}
-            </NavItem>
-          ))}
+                    <SocialIcons>
+                      <a
+                        style={{ width: "auto" }}
+                        href="https://www.facebook.com"
+                        aria-label="Facebook"
+                      >
+                        <FaFacebook />
+                      </a>
+                      <a
+                        style={{ width: "auto" }}
+                        href="https://www.twitter.com"
+                        aria-label="Twitter"
+                      >
+                        <FaTwitter />
+                      </a>
+                      <a
+                        style={{ width: "auto" }}
+                        href="https://www.linkedin.com"
+                        aria-label="LinkedIn"
+                      >
+                        <FaLinkedin />
+                      </a>
+                      <a
+                        style={{ width: "auto" }}
+                        href="https://www.instagram.com"
+                        aria-label="Instagram"
+                      >
+                        <FaInstagram />
+                      </a>
+                      {/* <Link to="/Donate"> */}
+                      <QuoteButton>Donate Now</QuoteButton>
+                      {/* </Link> */}
+                    </SocialIcons>
+                  </DropdownContent>
+                )}
+              </NavItem>
+            )
+          )}
           {/* <Link to="/Donate">
             <QuoteButton>Donate Now</QuoteButton>
           </Link> */}
@@ -334,16 +336,18 @@ const Header = () => {
             alt="Logo"
           />
         </Link>
-        {["/", "/Projects", "/About", "/Contact"].map((path, index) => (
-          <SideNavItem
-            key={index}
-            to={path}
-            isActive={activeNav === path}
-            onClick={() => setShowNav(false)}
-          >
-            {path === "/" ? "Home" : path.slice(1)}
-          </SideNavItem>
-        ))}
+        {["/", "/Projects", "/About", "/Gallery", "/Event", "/Contact"].map(
+          (path, index) => (
+            <SideNavItem
+              key={index}
+              to={path}
+              isActive={activeNav === path}
+              onClick={() => setShowNav(false)}
+            >
+              {path === "/" ? "Home" : path.slice(1)}
+            </SideNavItem>
+          )
+        )}
         <Link to="/donate">
           <QuoteButton>Donate Now</QuoteButton>
         </Link>

@@ -16,6 +16,7 @@ export const getInventory = () => {
       console.error("Error fetching inventory:", error);
     });
 };
+
 export const deleteProduct = () => {
   fetch("https://tobago-reads-app-server.vercel.app/api/deleteProduct", {
     method: "DELETE",

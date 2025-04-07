@@ -147,16 +147,6 @@ const CTASection = styled.section`
 const ProjectPage = () => {
   return (
     <PageWrapper>
-      {/* <HeroSection>
-        <HeroText>
-          <h1>Empowering Lives Through Impactful Projects</h1>
-          <p>
-            Join us in making a difference. Explore our ongoing and completed
-            projects aimed at transforming communities.
-          </p>
-          <button>See All Projects</button>
-        </HeroText>
-      </HeroSection> */}
       <Banner />
       <ProjectsGrid>
         <ProjectCard>
@@ -174,7 +164,6 @@ const ProjectPage = () => {
             <button>Donate Now</button>
           </Link>
         </ProjectCard>
-
         <ProjectCard>
           <img
             src="https://res.cloudinary.com/dbcygr0pi/image/upload/v1739255657/img13_mkvayy.jpg"
@@ -190,7 +179,66 @@ const ProjectPage = () => {
             <button>Donate Now</button>
           </Link>
         </ProjectCard>
-
+        <ProjectCard>
+          <img
+            src="https://res.cloudinary.com/dbcygr0pi/image/upload/v1739255657/img13_mkvayy.jpg"
+            alt="Project 2"
+            loading="eager"
+          />
+          <h3>Book Bags and School Supplies</h3>
+          <p>Empowering children with access to quality education.</p>
+          <div className="progress-bar">
+            <div className="progress"></div>
+          </div>
+          <Link to="/Donate">
+            <button>Donate Now</button>
+          </Link>
+        </ProjectCard>{" "}
+        <ProjectCard>
+          <img
+            src="https://res.cloudinary.com/dbcygr0pi/image/upload/v1739255657/img13_mkvayy.jpg"
+            alt="Project 2"
+            loading="eager"
+          />
+          <h3>Book Bags and School Supplies</h3>
+          <p>Empowering children with access to quality education.</p>
+          <div className="progress-bar">
+            <div className="progress"></div>
+          </div>
+          <Link to="/Donate">
+            <button>Donate Now</button>
+          </Link>
+        </ProjectCard>{" "}
+        <ProjectCard>
+          <img
+            src="https://res.cloudinary.com/dbcygr0pi/image/upload/v1739255657/img13_mkvayy.jpg"
+            alt="Project 2"
+            loading="eager"
+          />
+          <h3>Book Bags and School Supplies</h3>
+          <p>Empowering children with access to quality education.</p>
+          <div className="progress-bar">
+            <div className="progress"></div>
+          </div>
+          <Link to="/Donate">
+            <button>Donate Now</button>
+          </Link>
+        </ProjectCard>{" "}
+        <ProjectCard>
+          <img
+            src="https://res.cloudinary.com/dbcygr0pi/image/upload/v1739255657/img13_mkvayy.jpg"
+            alt="Project 2"
+            loading="eager"
+          />
+          <h3>Book Bags and School Supplies</h3>
+          <p>Empowering children with access to quality education.</p>
+          <div className="progress-bar">
+            <div className="progress"></div>
+          </div>
+          <Link to="/Donate">
+            <button>Donate Now</button>
+          </Link>
+        </ProjectCard>
         <ProjectCard>
           <img
             src="https://res.cloudinary.com/dbcygr0pi/image/upload/v1737386860/vecteezy_ai-generated-stethoscope-and-apple-on-wooden-table-health_36467585_xw9kmx.jpg"

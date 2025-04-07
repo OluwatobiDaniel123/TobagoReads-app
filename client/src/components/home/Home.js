@@ -6,6 +6,7 @@ import ProjectPage from "../articles/ProjectPage";
 import ContactPage from "../articles/ContactForm";
 import Map from "../articles/Map";
 import Fundraising from "../articles/Fundraising";
+import TestimonialPage from "../articles/Testimonials";
 
 const Home = () => {
   return (
@@ -13,8 +14,9 @@ const Home = () => {
       <Banner2 />
       <About />
       <CountUp />
-      <ProjectPage />
+      {/* <ProjectPage /> */}
       <Fundraising />
+      <TestimonialPage />
       <ContactPage />
       <Map />
     </div>

@@ -6,11 +6,11 @@ import styled, { keyframes } from "styled-components";
 const settings = {
   fade: true,
   infinite: true,
-  speed: 500,
+  speed: 1500,
   slidesToShow: 1,
   slidesToScroll: 1,
   autoplay: true,
-  autoplaySpeed: 4000,
+  autoplaySpeed: 5000,
   arrows: false,
   pauseOnHover: false,
 };
@@ -53,7 +53,7 @@ const Overlay = styled.div`
 
 const Slide = styled.div`
   width: 100%;
-  height: 50vh;
+  height: 100vh;
   position: relative;
 `;
 
@@ -174,7 +174,6 @@ const Fade = () => {
             <TextContainer>
               <GradientText>{item.heading}</GradientText>
               <SubText>{item.subtext}</SubText>
-              {/* <CallToAction to={item.link}>{item.LinkText}</CallToAction> */}
             </TextContainer>
           </Slide>
         ))}

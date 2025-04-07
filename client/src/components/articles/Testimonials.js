@@ -9,27 +9,13 @@ import styled from "styled-components";
 
 const TestimonialContainer = styled.div`
   text-align: center;
-  padding: 80px 20px;
+  padding: 40px 10px;
   background: linear-gradient(145deg, #f9f9f9, #ffffff);
   font-family: "Roboto", sans-serif;
 `;
 
 const SectionHeader = styled.h2`
-  // font-size: 42px;
-  // text-align: center;
-  // margin-bottom: 50px;
-  // color: #007bff;
-  // position: relative;
-  // display: inline-block;
-
-  // &::after {
-  //   content: "";
-  //   display: block;
-  //   width: 80px;
-  //   height: 4px;
-  //   background: #00c3ff;
-  //   margin: 12px auto 0;
-  // }  font-size: 30px;
+  font-size: 30px;
   width: 100%;
   font-variant: small-caps;
   border-bottom: 1px solid rgb(0, 195, 255);
@@ -38,26 +24,18 @@ const SectionHeader = styled.h2`
   margin-bottom: 10px;
 `;
 
-// const Title = styled.h1`
-//   font-size: 30px;
-//   width: 100%;
-//   font-variant: small-caps;
-//   border-bottom: 1px solid rgb(0, 195, 255);
-
-//   color: #333;
-//   margin-bottom: 10px;
-// `;
-
 const TestimonialCard = styled.div`
   background: white;
+  height: 300px;
   border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-  padding: 40px;
+  padding: 30px;
+  margin: 10px;
   text-align: center;
   transition: transform 0.3s;
+  box-shadow: 0 0 0 2px lightblue;
 
   &:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
   }
 
   img {
@@ -66,6 +44,11 @@ const TestimonialCard = styled.div`
     height: 100px;
     object-fit: cover;
     margin-bottom: 20px;
+    transition: 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   h3 {
@@ -86,21 +69,35 @@ const testimonials = [
     feedback:
       "DANOVALAB exceeded our expectations! Their attention to detail and professionalism were outstanding.",
     image:
-      "https://res.cloudinary.com/dbcygr0pi/image/upload/v1736662186/banner3_bzntym.jpg",
+      "https://res.cloudinary.com/dbcygr0pi/image/upload/v1741418057/Screenshot_2025-03-08_081014_nvnzth.png",
   },
   {
     name: "John Smith",
     feedback:
       "The team at DANOVALAB delivered a top-notch product that transformed our business.",
     image:
-      "https://res.cloudinary.com/dbcygr0pi/image/upload/v1736662186/banner3_bzntym.jpg",
+      "https://res.cloudinary.com/dbcygr0pi/image/upload/v1741418057/Screenshot_2025-03-08_081014_nvnzth.png",
   },
   {
-    name: "Emily Brown",
+    name: "Helianne Duke",
     feedback:
       "Fantastic experience! The team was highly responsive and delivered beyond what we imagined.",
     image:
-      "https://res.cloudinary.com/dbcygr0pi/image/upload/v1736662186/banner3_bzntym.jpg",
+      "https://res.cloudinary.com/dbcygr0pi/image/upload/v1741725412/IMG-20250311-WA0037_ffpae3.jpg",
+  },
+  {
+    name: "Jane Doe",
+    feedback:
+      "DANOVALAB exceeded our expectations! Their attention to detail and professionalism were outstanding.",
+    image:
+      "https://res.cloudinary.com/dbcygr0pi/image/upload/v1741418057/Screenshot_2025-03-08_081014_nvnzth.png",
+  },
+  {
+    name: "Jane Doe",
+    feedback:
+      "DANOVALAB exceeded our expectations! Their attention to detail and professionalism were outstanding.",
+    image:
+      "https://res.cloudinary.com/dbcygr0pi/image/upload/v1741418057/Screenshot_2025-03-08_081014_nvnzth.png",
   },
 ];
 
@@ -113,7 +110,7 @@ const TestimonialPage = () => {
         navigation
         pagination={{ clickable: true }}
         autoplay={{ delay: 3000, disableOnInteraction: false }}
-        spaceBetween={30}
+        spaceBetween={5}
         slidesPerView={1}
         breakpoints={{
           640: { slidesPerView: 1 },
@@ -122,11 +119,19 @@ const TestimonialPage = () => {
         }}
       >
         {testimonials.map((testimonial, index) => (
-          <SwiperSlide key={index}>
+          <SwiperSlide style={{ height: "340px" }} key={index}>
             <TestimonialCard>
-              <img src={testimonial.image} alt={testimonial.name} />
-              <h3>{testimonial.name}</h3>
-              <p>{testimonial.feedback}</p>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                }}
+              >
+                <img src={testimonial.image} alt={testimonial.name} />
+                <h3>{testimonial.name}</h3>
+                <p>{testimonial.feedback}</p>
+              </div>
             </TestimonialCard>
           </SwiperSlide>
         ))}

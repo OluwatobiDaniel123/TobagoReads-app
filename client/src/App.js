@@ -17,6 +17,10 @@ import Dashboard, { Campaigns, Donors } from "./components/Dashboard/Dashboard";
 import Chatbot from "./components/articles/Chatbot/Chatbot";
 import Committee from "./components/articles/CommiteePage";
 import Map from "./components/articles/Map";
+import Event from "./components/Events/Event";
+import EventPage from "./components/Events/Event";
+import Events_09 from "./components/Events/09_Event";
+import Gallery from "./components/Gallery/Gallery";
 
 const Layout = () => {
   return (
@@ -40,6 +44,9 @@ const router = createBrowserRouter(
         <Route path="/Contact" element={<ContactPage />} />
         <Route path="/commitee" element={<Committee />} />
         <Route path="/maps" element={<Map />} />
+        <Route path="/Event" element={<EventPage />} />
+        <Route path="/2009_event" element={<Events_09 />} />
+        <Route path="/Gallery" element={<Gallery />} />
       </Route>
       <Route path="/dashboard" element={<Dashboard />} />
       {/* <Route path="/donors" element={<Donors />} /> */}

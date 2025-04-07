@@ -316,7 +316,7 @@ const HighlightCard4 = styled.div`
   }
 
   @media (max-width: 768px) {
-    padding: 20px;
+    padding: 15px;
     h3 {
       font-size: 1.8rem;
     }
@@ -341,16 +341,21 @@ const HighlightContent = styled.div`
   h3 {
     font-size: 2.4rem;
     font-weight: bold;
-    margin: 10px 0;
+    margin: 10px 0;c
     color: #ffffff;
     @media (max-width: 768px) {
       font-size: 1.5rem;
+    margin: 5px 0;c
+      
     }
   }
 
   p {
     font-size: 1.2rem;
     color: rgba(255, 255, 255, 0.8);
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
   }
 `;
 
@@ -378,7 +383,7 @@ const CompanyHighlights = () => {
             </IconWrapper>
             <HighlightContent>
               <h3>
-                <CountUp end={1000000} />+
+                <CountUp end={20000} />+
               </h3>
               <p>Donations Received</p>
             </HighlightContent>
@@ -389,7 +394,7 @@ const CompanyHighlights = () => {
             </IconWrapper>
             <HighlightContent>
               <h3>
-                <CountUp end={5000} />+
+                <CountUp end={1000} />+
               </h3>
               <p>Lives Changed</p>
             </HighlightContent>
@@ -400,7 +405,7 @@ const CompanyHighlights = () => {
             </IconWrapper>
             <HighlightContent>
               <h3>
-                <CountUp end={150} />+
+                <CountUp end={10} />+
               </h3>
               <p>Projects Completed</p>
             </HighlightContent>
@@ -411,7 +416,7 @@ const CompanyHighlights = () => {
             </IconWrapper>
             <HighlightContent>
               <h3>
-                <CountUp end={20} />+
+                <CountUp end={5} />+
               </h3>
               <p>Countries Served</p>
             </HighlightContent>

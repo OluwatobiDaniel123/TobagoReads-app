@@ -107,55 +107,73 @@ const SubText = styled.p`
   }
 `;
 
-const CallToAction = styled(Link)`
-  display: inline-block;
-  margin-top: 1.5rem;
-  padding: 1rem 1.8rem;
-  font-size: 1rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: #fff;
-  background: linear-gradient(45deg, #ff7e5f, #feb47b);
-  background-size: 300% 300%;
-  text-decoration: none;
-  border-radius: 25px;
-  box-shadow: 0px 4px 15px rgba(255, 126, 95, 0.5);
-  transition: all 0.3s ease-in-out;
-  animation: ${fadeIn} 2s ease-out;
+const events = [
+  {
+    title: "New Year's Eve Pilgrimage to the Motherland",
+    date: "December 29, 2018 - January 10, 2019",
+    description:
+      "Experience West Africa (Senegal & The Gambia) by touring the Motherland...",
+    image: "https://via.placeholder.com/300", // Replace with actual image URL
+  },
+  {
+    title: "African Drum Class",
+    date: "Friday | December 28",
+    description:
+      "Join Africa Love Store at Town Square Las Vegas every Friday night for our weekly African Drum class...",
+    image: "https://via.placeholder.com/300",
+  },
+  {
+    title: "Kwanzaa Celebration - UMOJA",
+    date: "Wednesday | December 26",
+    description:
+      "A Live Remote with KCEP POWER 88.1 FM and special appearances...",
+    image: "https://via.placeholder.com/300",
+  },
+];
 
-  &:hover {
-    background-position: 100% 0;
-    box-shadow: 0px 6px 20px rgba(255, 126, 95, 0.7);
-    transform: translateY(-3px);
-  }
-
-  &:active {
-    transform: translateY(1px);
-    box-shadow: 0px 2px 10px rgba(255, 126, 95, 0.3);
-  }
-
-  @media (max-width: 768px) {
-    width: 100%;
-
-    font-size: 0.9rem;
-    padding: 0.6rem 1.5rem;
-  }
-`;
-
-const Banner2 = () => {
+const Events_09 = () => {
   return (
     <div className="slider-container">
       <Slide>
         <Image src="https://res.cloudinary.com/dbcygr0pi/image/upload/v1738155731/img8_kt83iz.jpg" />
         <Overlay />
         <TextContainer>
-          <GradientText>Join Hands to Make a Difference</GradientText>
+          <GradientText>2009 Event</GradientText>
           <SubText>Every small contribution creates a big impact.</SubText>
-          <CallToAction to="/donate">Donate Now</CallToAction>
         </TextContainer>
       </Slide>
+
+      <div className="flex flex-col items-center p-6">
+        <button className="bg-green-600 text-white px-4 py-2 rounded mb-4">
+          Return to Current Events
+        </button>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {events.map((event, index) => (
+            <div
+              key={index}
+              className="bg-white shadow-lg rounded-lg overflow-hidden max-w-sm"
+            >
+              <img
+                src={event.image}
+                alt={event.title}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-4">
+                <h3 className="text-lg font-semibold">{event.title}</h3>
+                <p className="text-sm text-gray-600 mb-2">{event.date}</p>
+                <p className="text-gray-700 text-sm mb-4">
+                  {event.description}
+                </p>
+                <button className="text-blue-500 hover:underline">
+                  More Info
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
 
-export default Banner2;
+export default Events_09;
